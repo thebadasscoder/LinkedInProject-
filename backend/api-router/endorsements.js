@@ -49,4 +49,6 @@ const deleteSkill = (req,res)=>{
 router.route('/')
 	.get(getAllSkills)
 	.get(getPhotos)
+	.post(newSkill)
+	.delete(deleteSkill)
 

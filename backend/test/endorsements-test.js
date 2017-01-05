@@ -1,9 +1,6 @@
 const expect = require('chai').expect;
 const supertest = require('supertest');
 const server = require('../server'); 
-const Skill = require('../models/endorsement-model.js').Skill;
-
-
 
 describe('Endorsement tests', ()=>{
 // 	//This is fake data that we will be using for tests

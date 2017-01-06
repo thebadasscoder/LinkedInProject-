@@ -21,15 +21,14 @@ module.exports = function(sequelize, DataTypes) {
         },
       
     }, {
-        // classMethods: {
-        //   associate: function(models) {
+         classMethods: {
+          associate: function(models) {
         // Using additional options like CASCADE etc for demonstration
         // Can also simply do Task.belongsTo(models.User);
-        // Volunteer.belongsTo(models.(SOMETHING), {
-        //   onDelete: "CASCADE",
-        // });
-        // }
-        // }
+        // Education.belongsToMany(models.Song, {through: "SongFeatures"});
+        // Volunteer.belongsTo(models.Resume)
+          }
+        }
     });
 
     return Volunteer;

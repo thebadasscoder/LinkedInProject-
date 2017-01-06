@@ -3,32 +3,28 @@
 
 
 module.exports = function(sequelize, DataTypes) {
-    var Language = sequelize.define("Language", {
-        language: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        proficiency: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
+    var Resume = sequelize.define("Resume", {
+        name: DataTypes.STRING
         
     }, {
-        classMethods: {
+       classMethods: {
           associate: function(models) {
         // Using additional options like CASCADE etc for demonstration
         // Can also simply do Task.belongsTo(models.User);
         // Education.belongsToMany(models.Song, {through: "SongFeatures"});
-        // Language.belongsTo(models.Resume)
+        Resume.belongsTo(models.Language),
+        Resume.belongsTo(models.Experience),
+        Resume.belongsTo(models.Volunteer),
+        Resume.belongsTo(models.Education)
           }
         }
     });
 
-    return Language;
+    return Resume;
 };
 
 // module.exports = function(sequelize, DataTypes) {
-//   var Language = sequelize.define("Language", {
+//   var Resume = sequelize.define("Language", {
 //     language: DataTypes.STRING,
 //     proficiency: DataTypes.STRING
     

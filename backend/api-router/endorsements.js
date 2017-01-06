@@ -24,7 +24,7 @@ const newSkill = (req,res)=>{
 	// console.log(Skills,'What is this?')
 	Skills.create({name:req.body.title, profileId:req.params.profileId})
 	.then((data)=>{
-		console.log('New Skill Created!')
+		console.log('We have all of the skills here!')
 		res.send(data);
 	})
 	.catch((error)=>{

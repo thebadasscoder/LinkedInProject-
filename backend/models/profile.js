@@ -26,7 +26,8 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false,
         },
         emailverification: {
-            type: DataTypes.BOOLEAN ,
+        	defaultValue: true,
+            type: DataTypes.BOOLEAN,
             allowNull: false,
         },
     }, {

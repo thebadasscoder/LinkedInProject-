@@ -15,6 +15,8 @@ app.use(session({
   saveUninitialized: true,
 }))
 
+app.use(express.static(path.join(__dirname, '../frontend/assets')));
+
 //Api route handler
 app.use("/api",require("./api-router"));
 

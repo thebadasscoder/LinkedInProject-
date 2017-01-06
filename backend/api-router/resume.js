@@ -2,6 +2,10 @@ const express = require('express');
 var app = express()
 const Resume = require('../models/index').Resume
 const Language = require('../models/index').Language
+const ExpeÎrience = require('../models/index').Experience
+const profile = require('../models/index').profile
+const Volunteer = require('../models/index').Volunteer
+const Education = require('../models/index').Education
 const router = require('express').Router();
 var bodyParser = require('body-parser');
 
@@ -18,7 +22,7 @@ const getResumeById = (req,res)=>{
  Resume.findById(req.params.id)
   
   .then((data)=>{
- include: [ { model: Language} ]
+  include: [ { model: Language},{ model: Experience},{ model: Volunteer},{ model: Education}, { model: profile} ]
   res.send(data)
  })
 }
@@ -26,7 +30,7 @@ const getResumeById = (req,res)=>{
 const createResume = (req,res)=>{
   // res.send('post works')
    Resume.create({
-   name: "req.body.language",
+   id: null,
    
 
   }).then(()=>{

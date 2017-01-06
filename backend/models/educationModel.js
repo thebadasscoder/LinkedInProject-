@@ -37,6 +37,10 @@ module.exports = function(sequelize, DataTypes) {
         // Can also simply do Task.belongsTo(models.User);
         // Education.belongsToMany(models.Song, {through: "SongFeatures"});
         // Education.belongsTo(models.Resume)
+        Education.hasMany(models.Resume,{ foreignKey: 'education_fields'})
+        // Resume.hasMany(models.Language,{ foreignKey: 'resume_fields'}),
+        // Resume.hasMany(models.Experience,{ foreignKey: 'resume_fields'}),
+        // Resume.hasMany(models.Education,{ foreignKey: 'resume_fields'})
           }
         }
     });

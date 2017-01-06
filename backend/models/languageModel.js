@@ -16,6 +16,8 @@ module.exports = function(sequelize, DataTypes) {
     }, {
         classMethods: {
           associate: function(models) {
+        Language.hasMany(models.Resume,{ foreignKey: 'language_fields'})
+
         // Using additional options like CASCADE etc for demonstration
         // Can also simply do Task.belongsTo(models.User);
         // Education.belongsToMany(models.Song, {through: "SongFeatures"});

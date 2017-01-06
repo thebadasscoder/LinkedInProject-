@@ -24,10 +24,10 @@ module.exports = function(sequelize, DataTypes) {
     }, {
         classMethods: {
           associate: function(models) {
-        // Using additional options like CASCADE etc for demonstration
-        // Can also simply do Task.belongsTo(models.User);
-        // Education.belongsToMany(models.Song, {through: "SongFeatures"});
-        // Experience.belongsTo(models.Resume)
+        Experience.hasMany(models.Resume,{ foreignKey: 'experience_fields'})
+        // Resume.hasMany(models.Language,{ foreignKey: 'resume_fields'}),
+        // Resume.hasMany(models.Experience,{ foreignKey: 'resume_fields'}),
+        // Resume.hasMany(models.Education,{ foreignKey: 'resume_fields'})
           }
         }
     });

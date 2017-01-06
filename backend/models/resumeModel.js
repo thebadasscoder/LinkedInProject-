@@ -12,10 +12,14 @@ module.exports = function(sequelize, DataTypes) {
         // Using additional options like CASCADE etc for demonstration
         // Can also simply do Task.belongsTo(models.User);
         // Education.belongsToMany(models.Song, {through: "SongFeatures"});
-        Resume.belongsTo(models.Language),
-        Resume.belongsTo(models.Experience),
-        Resume.belongsTo(models.Volunteer),
-        Resume.belongsTo(models.Education)
+        // Resume.hasMany(models.Language),
+        // Resume.hasMany(models.Experience),
+        // Resume.hasMany(models.Volunteer),
+        // Resume.hasMany(models.Volunteer,{ foreignKey: 'resume_fields'}),
+        // Resume.hasMany(models.Language,{ foreignKey: 'resume_fields'}),
+        // Resume.hasMany(models.Experience,{ foreignKey: 'resume_fields'}),
+        // Resume.hasMany(models.Education,{ foreignKey: 'resume_fields'})
+        // Resume.hasMany(models.Education)
           }
         }
     });

@@ -21,7 +21,7 @@ const createVolunteer = (req,res)=>{
     date: req.body.date,
     description: req.body.description
   }).then(()=>{
-    res.send('createVolunteer')
+    res.sendStatus(200)
   })
 }
 
@@ -33,7 +33,7 @@ const deleteVolunteer = (req,res)=>{
     }
   })
   .then(()=>{
-    res.send('deleted')
+    res.sendStatus(200)
   })
 }
 
@@ -43,19 +43,17 @@ const updateVolunteer = (req,res)=>{
   // res.send('update works')
   Volunteer.update(
     {
-      school:req.body.update,
-      degree: req.body.degree,
+      organization:req.body.organization,
+      role: req.body.role,
       date: req.body.date,
-      clubs: req.body.clubs,
-      society: req.body.society,
-      image: req.body.image
+      description: req.body.description
     },
     {where:{
           id:req.params.id
         }
   })
   .then(()=>{
-    res.send('updated')   
+    res.sendStatus(200)   
   })
 }
 

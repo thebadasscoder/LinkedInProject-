@@ -40,8 +40,8 @@ const updateLanguage = (req,res)=>{
   // res.send('update works')
   Language.update(
     {
-      language:req.params.language,
-      proficiency:req.params.proficiency
+      language:req.body.language,
+      proficiency:req.body.proficiency
     },
     {where:{
           id:req.params.id
@@ -57,7 +57,7 @@ router.route('/')
   .post(createLanguage)
 router.route('/:id')
   .delete(deleteLanguage)
-router.route('/:id/:language/:proficiency')
+router.route('/:id')
   .put(updateLanguage)
 
 

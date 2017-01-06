@@ -44,12 +44,11 @@ const updateExperience = (req,res)=>{
   // res.send('update works')
   Experience.update(
     {
-      school:req.body.update,
-      degree: req.body.degree,
-      date: req.body.date,
-      clubs: req.body.clubs,
-      society: req.body.society,
-      image: req.body.image
+      company:req.body.company,
+      location: req.body.location,
+      title: req.body.title,
+      period: req.body.period,
+      description: req.body.description
     },
     {where:{
           id:req.params.id

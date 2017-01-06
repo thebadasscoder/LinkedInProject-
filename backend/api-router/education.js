@@ -45,7 +45,7 @@ const updateEducation = (req,res)=>{
   // res.send('update works')
   Education.update(
     {
-      school:req.body.update,
+      school:req.body.school,
       degree: req.body.degree,
       date: req.body.date,
       clubs: req.body.clubs,

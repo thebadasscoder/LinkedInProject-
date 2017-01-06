@@ -21,3 +21,5 @@ app.get("/*", (req,res)=>{
 app.listen(8888, ()=>{
 	console.log('listen to port 8888');
 })
+
+module.exports = app;

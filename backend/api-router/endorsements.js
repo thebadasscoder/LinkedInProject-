@@ -1,11 +1,13 @@
 const router = require('express').Router();
-const Skills = require('./models').Skills;
-// this will handle any routes going to 
-// localhost:8888/api/profile/*
+const Skills = require('../models').skill;
+const profile = require('../models').profile;
 
-//GETTING ALL OF THE SKILLS
+// this will handle any routes going to 
+// localhost:8888/api/endorsements/*
+
+//GETTING ALL OF THE SKILLS FOR A SPECIFIC USER 
 const getAllSkills = (req,res)=>{
-	Skills.findAll()
+	Skills.findAll({where:{profileId:req.params.profileId}})
 		.then((data)=>{
 			console.log('Here are all of the skills!');
 			res.send(data);
@@ -16,23 +18,19 @@ const getAllSkills = (req,res)=>{
 		})
 }
 
-//GETTING THE SKILLS BY THE USERS ID. THEN WE ARE GOIGN TO GRAB  THE IMAGE OF THE USER AND STORE IT AS A VARIABLE TO SEND 
-// const getPhotos = (req,res)=>{
-// 	Skills.
-// }
-//
 
-//CREATING A SKILL TO POST 
+//CREATING A SKILL 
 const newSkill = (req,res)=>{
-	Skills.create({where:{description:req.body.description, quantity:req.body.total}})
-			.then((data)=>{
-				console.log('New skill created!')
-				res.send(data);
-			})
-			.catch((error)=>{
-				console.log('There is an error with posting a new skill');
-				res.send(error);
-			})
+	// console.log(Skills,'What is this?')
+	Skills.create({name:req.body.title, profileId:req.params.profileId})
+	.then((data)=>{
+		console.log('New Skill Created!')
+		res.send(data);
+	})
+	.catch((error)=>{
+		console.log('There was an error with creating a new skill');
+		res.send(error);
+	})
 }
 //DELETE A SKILL BY THEIR ID 
 const deleteSkill = (req,res)=>{
@@ -46,9 +44,13 @@ const deleteSkill = (req,res)=>{
 		res.send(200);
 	})
 }
-router.route('/')
-	.get(getAllSkills)
-	.get(getPhotos)
+
+router.route('/:profileId')
 	.post(newSkill)
+	.get(getAllSkills)
+
+
+router.route('/:id')
 	.delete(deleteSkill)
 
+module.exports = router;

@@ -18,7 +18,7 @@ const getAllSkills = (req,res)=>{
 }
 
 
-//CREATING A SKILL 
+//CREATING A  NEW SKILL 
 const newSkill = (req,res)=>{
 	Skills.create({name:req.body.title,profileId:req.params.profileId})
 	.then((data)=>{
@@ -84,9 +84,11 @@ const deleteEndorsement = (req,res)=>{
 	})
 }
 
+
+
 router.route('/:endorsedBy/:id')
-.get(getEndorsements)
-.delete(deleteEndorsement)
+	.get(getEndorsements)
+	.delete(deleteEndorsement)
 
 router.route('/:profileId/:skillId')
 	.post(newEndorsement)
@@ -96,10 +98,8 @@ router.route('/:profileId')
 	.get(getAllSkills)
 	.post(newSkill)
 
-
-
 router.route('/:id')
 	.delete(deleteSkill)
 	
-
+//
 module.exports = router;

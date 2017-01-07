@@ -4,10 +4,14 @@ const router = require('express').Router();
 // localhost:8888/api/*
 
 router.use('/profile', require('./profile'));
-router.use('/education', require('./education'));
-router.use('/language', require('./language'));
-router.use('/experience', require('./experience'));
-router.use('/volunteer', require('./volunteer'));
-router.use('/resume', require('./resume'));
+
+router.use('/endorsements', require('./endorsements'));
+
+// router.use('/education', require('./education'));
+// router.use('/language', require('./language'));
+// router.use('/experience', require('./experience'));
+// router.use('/volunteer', require('./volunteer'));
+// router.use('/resume', require('./resume'));
+// >>>>>>> master
 
 module.exports = router;

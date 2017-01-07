@@ -23,7 +23,7 @@ const createEducation = (req,res)=>{
     society: req.body.society,
     image: req.body.image
   }).then(()=>{
-    res.send('createEducation')
+    res.sendStatus(200)
   })
 }
 
@@ -35,7 +35,7 @@ const deleteEducation = (req,res)=>{
     }
   })
   .then(()=>{
-    res.send('deleted')
+    res.sendStatus(200)
   })
 }
 
@@ -57,7 +57,7 @@ const updateEducation = (req,res)=>{
         }
   })
   .then(()=>{
-    res.send('updated')   
+    res.sendStatus(200)   
   })
 }
 

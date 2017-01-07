@@ -8,21 +8,20 @@ app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 
-// this will handle any routes going to 
-// localhost:8888/api/profile/*
+
 
 const createExperience = (req,res)=>{
-  // res.send('post works') 
+  
   Experience.create({
     // where: {title: 'aProject'},
     // attributes: ['id', ['name', 'title']]
-    company: "req.body.company",
-    title: "req.body.title",
-    location: "req.body.location",
-    period: "req.body.period",
-    description: "req.body.description",
+    company: req.body.company,
+    title: req.body.title,
+    location: req.body.location,
+    period: req.body.period,
+    description: req.body.description
   }).then(()=>{
-    res.send('createExperience')
+    res.sendStatus(200)
   })
 }
 
@@ -34,7 +33,7 @@ const deleteExperience = (req,res)=>{
     }
   })
   .then(()=>{
-    res.send('deleted')
+    res.sendStatus(200)
   })
 }
 
@@ -55,7 +54,7 @@ const updateExperience = (req,res)=>{
         }
   })
   .then(()=>{
-    res.send('updated')   
+    res.sendStatus(200)   
   })
 }
 

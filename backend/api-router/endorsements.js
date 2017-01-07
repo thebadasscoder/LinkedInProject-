@@ -22,7 +22,7 @@ const getAllSkills = (req,res)=>{
 const newSkill = (req,res)=>{
 	Skills.create({name:req.body.title,profileId:req.params.profileId})
 	.then((data)=>{
-		res.sendStatus(201);
+		res.send(200);
 	})
 	.catch((error)=>{
 		res.sendStatus(500);

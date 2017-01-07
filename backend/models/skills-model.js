@@ -1,7 +1,7 @@
 "use strict";
 
 module.exports = function(sequelize, DataTypes) {
-  var Skills = sequelize.define("skills", {
+  var Skills = sequelize.define("skill", {
     name: DataTypes.STRING
   }, 
   {
@@ -9,7 +9,9 @@ module.exports = function(sequelize, DataTypes) {
       associate: function(models) {
         // Using additional options like CASCADE etc for demonstration
         // Can also simply do Task.belongsTo(models.User);
-        Skills.belongsTo(models.profile, {
+        Skills.belongsTo(models.profile),
+        Skills.hasMany(models.endorsement,
+        {
           onDelete: "CASCADE",
           foreignKey: {
             allowNull: false
@@ -17,7 +19,6 @@ module.exports = function(sequelize, DataTypes) {
         });
       }
     }
-    
   });
 
   return Skills;

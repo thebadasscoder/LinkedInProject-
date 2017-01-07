@@ -8,8 +8,7 @@ app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 
-// this will handle any routes going to 
-// localhost:8888/api/profile/*
+
 
 const createExperience = (req,res)=>{
   // res.send('post works') 

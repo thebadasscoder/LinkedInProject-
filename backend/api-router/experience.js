@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 
 
 const createExperience = (req,res)=>{
-  // res.send('post works') 
+  
   Experience.create({
     // where: {title: 'aProject'},
     // attributes: ['id', ['name', 'title']]
@@ -21,7 +21,7 @@ const createExperience = (req,res)=>{
     period: req.body.period,
     description: req.body.description
   }).then(()=>{
-    res.send('createExperience')
+    res.sendStatus(200)
   })
 }
 
@@ -33,7 +33,7 @@ const deleteExperience = (req,res)=>{
     }
   })
   .then(()=>{
-    res.send('deleted')
+    res.sendStatus(200)
   })
 }
 
@@ -54,7 +54,7 @@ const updateExperience = (req,res)=>{
         }
   })
   .then(()=>{
-    res.send('updated')   
+    res.sendStatus(200)   
   })
 }
 

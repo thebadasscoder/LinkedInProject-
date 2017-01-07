@@ -5,30 +5,30 @@ module.exports = function(sequelize, DataTypes) {
     var Education = sequelize.define("Education", {
         school: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         degree: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         date: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         clubs: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         society: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         image: {
             type: DataTypes.STRING,
             validate:{
               isUrl: true, 
             },
-            allowNull: false,
+            allowNull: true,
         },
     }, {
         classMethods: {

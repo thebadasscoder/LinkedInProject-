@@ -12,7 +12,6 @@ it(`'getAllSkills()' should respond with all of the skills by using the user's p
 	.end((err,res)=>{
 		expect(res.body).be.a('object');
 		expect(res.body).not.equal(['name', 'profileId', 'id', 'createdAt', 'update']);
-		expect(res.body.length).gte(0);
 		done();
 	})
 })

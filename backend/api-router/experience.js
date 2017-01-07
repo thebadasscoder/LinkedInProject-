@@ -16,11 +16,11 @@ const createExperience = (req,res)=>{
   Experience.create({
     // where: {title: 'aProject'},
     // attributes: ['id', ['name', 'title']]
-    company: "req.body.company",
-    title: "req.body.title",
-    location: "req.body.location",
-    period: "req.body.period",
-    description: "req.body.description",
+    company: req.body.company,
+    title: req.body.title,
+    location: req.body.location,
+    period: req.body.period,
+    description: req.body.description
   }).then(()=>{
     res.send('createExperience')
   })

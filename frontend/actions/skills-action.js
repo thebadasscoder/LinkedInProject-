@@ -13,9 +13,9 @@ export const removeSkill(id){
 	}
 }
 
-export const showSkill(profileId){
+export const displaySkill(profileId){
 	return {
-		type: 'SHOW_SKILL',
+		type: 'DISPLAY_SKILL',
 		profileId
 	}
 }

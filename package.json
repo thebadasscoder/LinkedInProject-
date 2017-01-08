@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
-    "start": "nodemon backend/server.js"
+    "start": "webpack -w & nodemon backend/server.js",
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -42,6 +42,7 @@
     "sequelize": "^3.28.0",
     "sequelize-cli": "^2.5.1",
     "supertest": "^2.0.1",
-    "webpack": "^1.14.0"
+    "webpack": "^1.14.0",
+    "webpack-livereload-plugin": "^0.9.0"
   }
 }

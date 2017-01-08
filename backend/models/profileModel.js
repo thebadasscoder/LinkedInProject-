@@ -17,7 +17,7 @@ module.exports = function(sequelize, DataTypes) {
         email: {
             type: DataTypes.STRING,
             validate:{
-            	isEmail: true, 
+              isEmail: true, 
             },
             allowNull: false,
         },
@@ -26,22 +26,21 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false,
         },
         emailverification: {
-        	defaultValue: true,
-            type: DataTypes.BOOLEAN,
+            type: DataTypes.BOOLEAN ,
             allowNull: false,
         },
     }, {
         classMethods: {
           associate: function(models) {
-        //Using additional options like CASCADE etc for demonstration
-        //Can also simply do Task.belongsTo(models.User);
-        profile.hasMany(models.endorsement),
-        profile.hasMany(models.skill, {
-          onDelete: "CASCADE",
-        });
-        }
+        // Using additional options like CASCADE etc for demonstration
+        // Can also simply do Task.belongsTo(models.User);
+        // Education.belongsToMany(models.Song, {through: "SongFeatures"});
+        // Resume.belongsTo(models.Language),
+        // Resume.belongsTo(models.Experience),
+        // Resume.belongsTo(models.Volunteer),
+        profile.belongsTo(models.Resume)
+          }
         }
     });
-
     return profile;
 };

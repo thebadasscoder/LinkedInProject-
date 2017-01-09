@@ -35,13 +35,13 @@ const postProfile = (userInfo) => dispatch => {
 }
 
 const validate = () => (dispatch) => {
-  console.log("validate")
+  // console.log("validate")
   $.ajax({
     url: '/api/user/validate/1',
     type: 'get',
   })
   .done(data=>{
-    console.log(data);
+    // console.log(data);
     dispatch(getUser(data));
   })
   // returning a promise so .then can be called if needed

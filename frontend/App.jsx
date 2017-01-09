@@ -6,7 +6,10 @@ import {Provider} from 'react-redux';
 /****ADD YOUR STORE HERE****/
 import Store from './store/store'; 
 
+
 /****ADD YOUR COMPONENTS HERE****/
+import Blog from './components/blog/Blog';
+import NewBlog from './components/blog/NewBlog';
 
 
 const App = withRouter((props)=>(
@@ -20,6 +23,8 @@ ReactDOM.render(
   <Provider store={Store}>
     <Router history={browserHistory}>
       <Route path="/" component={App}>
+      <Route path="/blog" component={Blog} />
+      <Route path='/newblog' component={NewBlog} />
       </Route>
       {/*<Route path="/*" component={NotFound}/>*/}
     </Router>

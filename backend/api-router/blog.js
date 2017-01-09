@@ -27,7 +27,7 @@ const createBlog = (req, res) => {
 	              dislikes: 0
 	          })
 		.then(function(){
-	      res.send('Blog Created')
+	      res.send(200)
     }) 
 		.catch((error) => {
 			res.sendStatus(500);
@@ -46,7 +46,7 @@ const updateBlog = (req, res) => {
 	}
     })
 	   .then(function(){
-	   	res.send('Updated the status')
+	   	res.send(200)
 	})
 	   
 	   .catch((error)=>{

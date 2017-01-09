@@ -8,6 +8,8 @@ import Store from './store/store';
 
 /****ADD YOUR COMPONENTS HERE****/
 import Skills from './components/Skills.jsx';
+import Login from './components/login/Login';
+import Register from './components/login/Register';
 
 
 
@@ -23,6 +25,8 @@ ReactDOM.render(
     <Router history={browserHistory}>
       <Route path="/" component={App}>
       <Route path="endorsements" component={Skills}/>
+      <Route path="/login" component={Login}/>
+      <Route path="/register" component={Register}/>
       </Route>
 
       {/*<Route path="/*" component={NotFound}/>*/}

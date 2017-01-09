@@ -7,6 +7,8 @@ import {Provider} from 'react-redux';
 import Store from './store/store'; 
 
 /****ADD YOUR COMPONENTS HERE****/
+import Login from './components/login/Login';
+import Register from './components/login/Register';
 
 
 const App = withRouter((props)=>(
@@ -20,6 +22,8 @@ ReactDOM.render(
   <Provider store={Store}>
     <Router history={browserHistory}>
       <Route path="/" component={App}>
+      <Route path="/login" component={Login}/>
+      <Route path="/register" component={Register}/>
       </Route>
       {/*<Route path="/*" component={NotFound}/>*/}
     </Router>

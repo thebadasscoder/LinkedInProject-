@@ -10,6 +10,7 @@ import Store from './store/store';
 import Skills from './components/Skills.jsx';
 
 
+
 const App = withRouter((props)=>(
   <div>
     {/*<Navbar />*/}

@@ -1,6 +1,8 @@
 import React from 'react';
 import $ from 'jQuery';
-import {addSkill} from '../actions/skills-action.js';
+import {connect} from 'react-redux';
+
+// import {addSkill} from '../actions/skills-action.js';
 
 const SkillForm = React.createClass({
 getInitialState(){
@@ -8,29 +10,38 @@ getInitialState(){
 }, 
 nameChange(e){
 	this.setState({name:e.target.value})
-}
+},
 createASkill(e){
 e.preventDefault();
 	$.ajax({
-		url:'/api/endorsement/',
+		url:'/api/endorsements/' + 2,
 		type: 'POST',
 		data: this.state
 	})
+	.done((data)=>{
+		this.props.goto('/')	
+		// $.ajax({
+		// 	url: '/api/endorsements/' + 2,
+		// 	type:'GET',
+		// 	success: ((data)=>{
+		// 		data ? console.log('New Skill Created!') : console.log('Error with name');
+		// 	})
+		// })
+	});
 },
+
 render(){
-	console.log(this.state.name, ':SkillName')
 		return (
 			<div>
-			<center>
-
-			<h2>CREATE A SKILL:</h2>
-			<form onSubmit={this.createASkill}>
 			<input type="text" placeholder="enter a skill" onChange={this.nameChange} value={this.state.name}></input>
-			</form>
-			</center>
+			<button type="button" onClick={this.createASkill}>+</button>
 			</div>
 		)
 	}
 })
-
-export default SkillForm;
+const mapToStateProps = (state, ownProps)=>{
+	console.log(state, 'State???');
+	console.log(ownProps, 'ownProps???');
+	return {};
+}
+export default connect(mapToStateProps)(SkillForm);

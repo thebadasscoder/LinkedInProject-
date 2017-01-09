@@ -39,7 +39,8 @@ const updateBlog = (req, res) => {
 	blog.update(
 	{
 		likes: req.body.likes,
-		dislikes: req.body.dislikes
+		dislikes: req.body.dislikes,
+		text_body:req.body.text
 	},
 	{ where: {
 		 id: req.params.id

@@ -20,7 +20,7 @@ const getAllSkills = (req,res)=>{
 
 //CREATING A  NEW SKILL 
 const newSkill = (req,res)=>{
-	Skills.create({name:req.body.title,profileId:req.params.profileId})
+	Skills.create({name:req.body.name,profileId:req.params.profileId})
 	.then((data)=>{
 		res.send(200);
 	})
@@ -95,7 +95,7 @@ router.route('/:profileId/:skillId')
 
 
 router.route('/:profileId')
-	.get(getAllSkills)
+	.get(getAllSkills) 
 	.post(newSkill)
 
 router.route('/:id')

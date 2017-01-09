@@ -8,24 +8,24 @@ const Endorsements = require('../models').endorsement;
 
 //GETTING ALL OF THE SKILLS FOR A SPECIFIC USER 
 const getAllSkills = (req,res)=>{
-	Skills.findAll({where:{profileId:req.params.profileId}, include:[Endorsements]})
+	Skills.findAll({where:{profileId:req.params.profileId}, order:'id DESC', include:[Endorsements]})
 		.then((data)=>{
 			res.send(data);
 		})
 		.catch((error)=>{
-			res.sendStatus(500);
+			res.send(error);
 		})
 }
 
 
 //CREATING A  NEW SKILL 
 const newSkill = (req,res)=>{
-	Skills.create({name:req.body.name,profileId:req.params.profileId})
+	Skills.create({profileId:req.params.profileId, name:req.body.name})
 	.then((data)=>{
-		res.send(200);
+		res.send(data);
 	})
 	.catch((error)=>{
-		res.sendStatus(500);
+		res.send(error);
 	})
 }
 
@@ -41,57 +41,60 @@ const deleteSkill = (req,res)=>{
 	})
 }
 
-//CREATING AN ENDORSEMENT 
-const newEndorsement = (req,res)=>{
-	let profileId;
-	return Skills.findAll({where:{profileId:req.params.profileId}
-	})
-	.then((skill)=>{
-		profileId = skill[0].dataValues.profileId
-	})
-	.then(()=>{
-		return Endorsements.create({skillId:req.params.skillId, endorsedBy:req.params.profileId})
-	})
-	.then((endorsement)=>{
-		res.send(endorsement)
-	})
-	.catch((error)=>{
-		res.sendStatus(500);
-	})
-}
+// //CREATING AN ENDORSEMENT 
+// const newEndorsement = (req,res)=>{
+// 	let profileId;
+// 	return Skills.findAll({
+// 		where:{profileId:req.params.profileId}
+// 	})
+// 	.then((skill)=>{
+// 		profileId = skill[0].dataValues.profileId
+// 	})
+// 	.then(()=>{
+// 		return Endorsements.create({skillId:req.params.skillId, endorsedBy:req.params.profileId})
+// 	})
+// 	.then((endorsement)=>{
+// 		console.log('profileId ===>', profileId)
+// 		console.log('endorsement===>', endorsement)
+// 		// res.send(endorsement)
+// 	})
+// 	.catch((error)=>{
+// 		res.sendStatus(500);
+// 	})
+// }
 
 
-// // GETTING ALL OF THE ENDORSEMENTS 
-const getEndorsements = (req,res)=>{
-	Endorsements.findAll({where:{endorsedBy:req.params.endorsedBy, id:req.params.id}})
-	.then((data)=>{
-		res.send(data);
-	})
-	.catch((error)=>{
-		res.sendStatus(200);
-	})
-}
+// // GETTING ALL OF THE ENDORSEMENTS BY WHO IT WAS ENDORSED BY AND THE ID OF THE SKILL
+// const getEndorsements = (req,res)=>{
+// 	Endorsements.findAll()
+// 	.then((data)=>{
+// 		res.send(data);
+// 	})
+// 	.catch((error)=>{
+// 		res.send(error);
+// 	})
+// }
 
 
-// //DELETE AN ENDORSMENT 
-const deleteEndorsement = (req,res)=>{
-	Endorsements.destroy({where:{endorsedBy:req.params.endorsedBy, id:req.params.id}})
-	.then((data)=>{
-		res.sendStatus(200)
-	})
-	.catch((error)=>{
-		res.send(500)
-	})
-}
+//DELETE AN ENDORSMENT  BY WHO IT WAS ENDORSED BY THE ID OF THE SKILL
+// const deleteEndorsement = (req,res)=>{
+// 	Endorsements.destroy({where:{endorsedBy:req.params.endorsedBy}})
+// 	.then((data)=>{
+// 		res.sendStatus(200)
+// 	})
+// 	.catch((error)=>{
+// 		res.sendStatus(500)
+// 	})
+// }
 
+	
 
+// router.route('/:id')
+// 	// .get(getEndorsements)
+// 	.delete(deleteEndorsement)
 
-router.route('/:endorsedBy/:id')
-	.get(getEndorsements)
-	.delete(deleteEndorsement)
-
-router.route('/:profileId/:skillId')
-	.post(newEndorsement)
+// router.route('/:profileId/:skillId')
+// 	.post(newEndorsement)
 
 
 router.route('/:profileId')
@@ -101,5 +104,4 @@ router.route('/:profileId')
 router.route('/:id')
 	.delete(deleteSkill)
 	
-//
 module.exports = router;

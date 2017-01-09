@@ -2,8 +2,6 @@ import React from 'react';
 import $ from 'jQuery';
 import {Link} from 'react-router';
 import SkillForm from './SkillForm.jsx';
-import {connect} from 'react-redux';
-
 
 
 const Skills = React.createClass({
@@ -29,15 +27,12 @@ componentDidMount(){
 		
 		<h1> Skills & Endorsements </h1>
 		<h3> ProfileId#: 2 </h3>
-		<SkillForm goto={this.props.goto}/>
-		{SkillsDisplay}	
+		<SkillForm/>
+		{SkillsDisplay}
+	
 		</div>
 		)
 	}
 })
-const mapStateToProps = (state, ownProps)=>{
-	console.log(state, 'STATE?');
-	console.log(ownProps, 'PROPS');
-	return {goto:ownProps.router.push};
-}
-export default  connect(mapStateToProps)(Skills);
+
+export default Skills;

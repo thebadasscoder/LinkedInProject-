@@ -1,7 +1,5 @@
 import React from 'react';
 import $ from 'jQuery';
-import {connect} from 'react-redux';
-
 // import {addSkill} from '../actions/skills-action.js';
 
 const SkillForm = React.createClass({
@@ -18,18 +16,7 @@ e.preventDefault();
 		type: 'POST',
 		data: this.state
 	})
-	.done((data)=>{
-		this.props.goto('/')	
-		// $.ajax({
-		// 	url: '/api/endorsements/' + 2,
-		// 	type:'GET',
-		// 	success: ((data)=>{
-		// 		data ? console.log('New Skill Created!') : console.log('Error with name');
-		// 	})
-		// })
-	});
 },
-
 render(){
 		return (
 			<div>
@@ -39,9 +26,5 @@ render(){
 		)
 	}
 })
-const mapToStateProps = (state, ownProps)=>{
-	console.log(state, 'State???');
-	console.log(ownProps, 'ownProps???');
-	return {};
-}
-export default connect(mapToStateProps)(SkillForm);
+
+export default SkillForm;

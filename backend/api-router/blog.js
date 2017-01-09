@@ -12,8 +12,10 @@ const getAllBlog = (req, res) => {
 	blog.findAll()
 	    .then(function(data){
 	    	res.send(data)
-
-	})
+    })
+	  	.catch((error) => {
+	  		res.sendStatus(500)
+	})  
 };
 
 // To create blog post
@@ -27,6 +29,9 @@ const createBlog = (req, res) => {
 		.then(function(){
 	      res.send('Blog Created')
     }) 
+		.catch((error) => {
+			res.sendStatus(500);
+    })
 };
 
 // To update the blog post with likes or dislikes
@@ -42,6 +47,10 @@ const updateBlog = (req, res) => {
     })
 	   .then(function(){
 	   	res.send('Updated the status')
+	})
+	   
+	   .catch((error)=>{
+		res.sendStatus(500);
 	})
 
 };

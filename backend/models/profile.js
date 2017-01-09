@@ -32,14 +32,17 @@ module.exports = function(sequelize, DataTypes) {
         },
     }, {
         classMethods: {
-          associate: function(models) {
-        //Using additional options like CASCADE etc for demonstration
-        //Can also simply do Task.belongsTo(models.User);
-        profile.hasMany(models.endorsement),
-        profile.hasMany(models.skill, {
-          onDelete: "CASCADE",
-        });
-        }
+            associate: function(models) {
+                //Using additional options like CASCADE etc for demonstration
+                //Can also simply do Task.belongsTo(models.User);
+                profile.hasMany(models.endorsement);
+                profile.belongsTo(models.Resume,{
+                    defaultValue: null,
+                });
+                profile.hasMany(models.skill, {
+                  onDelete: "CASCADE",
+                });
+            }
         }
     });
 

@@ -28,13 +28,14 @@ const App = withRouter((props)=>(
 ReactDOM.render(
   <Provider store={Store}>
     <Router history={browserHistory}>
-      <Route path="/" component={App}>
+      <Route path="/" component={App} onEnter={validate}>
       <Route path="endorsements" component={Skills}/>
       <Route path="/blog" component={Blog} />
       <Route path='/newblog' component={NewBlog} />
       <Route path="/login" component={Login}/>
       <Route path="/register" component={Register}/>
-      </Route>
+      <Route path="/profile" component={Profile} />
+    </Route>
       {/*<Route path="/*" component={NotFound}/>*/}
     </Router>
   </Provider>,

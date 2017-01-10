@@ -1,12 +1,24 @@
 import $ from 'jQuery';
 
-export const addSkill = (profileId, name)=>{
-	return{
-		type:'ADD_SKILL',
-		profileId,
-		name
+const addSkill = currentSkill =>({
+	type: 'ADD_SKILL',
+	data: name 
+})
+
+const addSkillServer = (data)=>(dispatch)=>{
+	console.log('I just created a skill!')
+	$.ajax({
+		url:
+		type:'POST',
+		data:data,
+	})
+	.done(data =>{
+		dispatch(addSkill(data))
+	})
+	return Promise.resolve();
 	}
 }
+export default addSkillServer;
 
 
 

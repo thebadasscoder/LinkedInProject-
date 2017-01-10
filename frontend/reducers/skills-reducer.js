@@ -1,0 +1,3 @@
+const skillReducer = (state = [], action)=>{
+
+}

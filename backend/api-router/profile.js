@@ -61,15 +61,17 @@ const makeProfile = (req,res)=>{
 		if(data){
 			throw  new Error();
 		}else{
-			if(req.files){
-				let extention = '.'+ req.files[0].mimetype.split('/')[1];
+			if(req.files[0]){
+				console.log(req.files);
+				// let extention = '.'+ req.files[0].mimetype.split('/')[1];
+				let extention = '.'+ 'jpeg';
 				req.body.image = 'profile-images/' + req.body.username + extention;
 				// console.log(extention);
 				let oldPath = req.files[0].destination + req.files[0].filename;
 				let newPath = path.join(__dirname, '../../frontend/assets/profile-images/') + req.body.username + extention;
 				fs.rename(oldPath, newPath);
 			}else{
-				req.body.image = 'profile-images/default';
+				req.body.image = 'profile-images/default.jpeg';
 			}
 		}
 	})
@@ -86,7 +88,7 @@ const makeProfile = (req,res)=>{
 		res.sendStatus(200);
 	})
 	.catch(err=>{
-		// console.log(err)
+		console.log(err);
 		res.sendStatus(500);
 	})
 }
@@ -141,7 +143,6 @@ router.use(multer({dest: './temp-file-holding/'}).any())
 	.get(getProfile)
 	.post(makeProfile)
 
-// router.post('/', multer({dest: './temp-file-holding/'}).any(),makeProfile)
 
 router.route('/pic/:id')
 	.get(getProfilePicture)

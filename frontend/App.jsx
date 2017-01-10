@@ -5,6 +5,7 @@ import {Provider} from 'react-redux';
 
 /****ADD YOUR STORE HERE****/
 import Store from './store/store'; 
+import User_Actions from './actions/User-Actions';
 
 /****ADD YOUR COMPONENTS HERE****/
 import Login from './components/login/Login';
@@ -18,10 +19,14 @@ const App = withRouter((props)=>(
   </div>
 ))
 
+const validate = ()=>{
+  Store.dispatch(User_Actions.validate());
+}
+
 ReactDOM.render(
   <Provider store={Store}>
     <Router history={browserHistory}>
-      <Route path="/" component={App}>
+      <Route path="/" component={App} onEnter={validate}>
       <Route path="/login" component={Login}/>
       <Route path="/register" component={Register}/>
       </Route>

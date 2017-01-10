@@ -10,7 +10,6 @@ const Resume = ({text, addResume})=>(
 
 <div>
   
-  <button>Resume</button>
   <Education/>
 </div>
 

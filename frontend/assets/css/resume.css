@@ -1,9 +1,14 @@
 /*ALL EDUCATION COMPONENT CSS//////*/
 #resume {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 235px;
 
 } 
+
+#image{
+  display: flex;
+  flex-direction: row;
+}
 
 #educationInput {
   display: flex;
@@ -13,10 +18,10 @@
   height: 200px;
 }
 
-#educationDiv {
+#educationMainDiv {
   display: flex;
   flex-direction: row;
-  background-color: yellow;
+  width: 200px;
 }
 
 #educationFormStyle {
@@ -25,7 +30,16 @@
   
 }
 .educationInputStyle {
-  height:30px;
+  height: 30px;
+  width: 200px;
   
+}
+
+.eduOutput{
+  display: block;
+/*  align-items: center;
+  flex-direction: column;*/
+
+  /*height: 100px;*/
 }
 

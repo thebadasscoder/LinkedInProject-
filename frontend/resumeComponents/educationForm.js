@@ -29,7 +29,7 @@ var EduForm = React.createClass({
       var data = event.target.value
       // console.log(data)
       this.setState({date:data})
-      console.log(this.state.handleChangeDate)
+      console.log(this.state.date)
 
     },
    handleChangeClubs(event){
@@ -58,7 +58,7 @@ var EduForm = React.createClass({
   handleSubmit(event){
     // this.setState({image:''})
     event.preventDefault()
-    let data = {school: this.state.school, degree: this.state.degree, date: this.state.date, clubs: this.state.clubs, society: this.state.society, image: this.state.image}
+    let data = {school: this.state.School, degree: this.state.degree, date: this.state.date, clubs: this.state.clubs, society: this.state.society, image: this.state.image}
     // let data = {school: store.getState().school}
 
     console.log(data)
@@ -92,15 +92,20 @@ var EduForm = React.createClass({
             <input className = 'educationInputStyle' type = 'submit'/>
           </div>
         </form>
+        <div id='image'>
+          <img id = 'resume' src = 'http://identity.unc.edu/files/2014/01/image29a.jpg'/> 
 
-        <div>
-          <h1>{this.state.school}</h1>
-          <h1>{this.state.school}</h1>
-          <h1>{this.state.school}</h1>
-          <h1>{this.state.school}</h1>
-          <h1>{this.state.school}</h1>
-          <h1>{this.state.school}</h1>
         </div>
+          
+          <div id = 'outputDiv'>
+         
+            <h2 className = 'eduOutput'>{this.state.school}</h2>
+            <h2 className = 'eduOutput'>{this.state.degree}</h2>
+            <h2 className = 'eduOutput'>{this.state.date}</h2>
+            <h2 className = 'eduOutput'>{this.state.clubs}</h2>
+            <h2 className = 'eduOutput'>{this.state.society}</h2>
+          </div>
+      
       </div>
     )
   }

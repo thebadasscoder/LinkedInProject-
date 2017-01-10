@@ -35,9 +35,8 @@ const postProfile = (userInfo) => dispatch => {
 }
 
 const validate = () => (dispatch) => {
-  // console.log("validate")
   $.ajax({
-    url: '/api/user/validate/1',
+    url: '/api/profile/validate',
     type: 'get',
   })
   .done(data=>{

@@ -13,14 +13,14 @@ const Profile = (props)=>(
 )
 
 const mapStateToProps = (state, ownprops)=>{
-	// console.log(state);
+	console.log(state);
 	// to be implemented once we have a proper navbar
 	// if(!state.user){
 	// 	ownprops.router.push("/login");
 	// }
 	return{
 		user: state.user,
-		goTo: ownprops.router.push
+	 
 	}
 }
 

@@ -60,7 +60,9 @@ const Register = React.createClass({
 
 
 const mapStateToProps = (state, ownprops)=>{
-	return{}
+	return{
+		user: state.user
+	}
 }
 
 function mapDispatchToProps(dispatch) {

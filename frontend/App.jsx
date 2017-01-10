@@ -24,9 +24,7 @@ const App = withRouter((props)=>(
   </div>
 ))
 
-const validate = ()=>{
-  Store.dispatch(User_Actions.validate());
-}
+
 
 ReactDOM.render(
   <Provider store={Store}>
@@ -37,7 +35,7 @@ ReactDOM.render(
       <Route path="/login" component={Login}/>
       <Route path="/register" component={Register}/>
       <Route path="/profile" component={Profile} />
-    </Route>
+    </Route> 
       {/*<Route path="/*" component={NotFound}/>*/}
     </Router>
   </Provider>,

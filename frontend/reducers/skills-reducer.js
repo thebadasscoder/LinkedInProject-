@@ -1,4 +1,4 @@
-const skills = (state = false,action)=>{
+const skills = (state = false, action)=>{
 	switch(action.type){
 		case "ADD_SKILL":
 		return action.data

@@ -1,26 +1,26 @@
-import $ from 'jQuery';
+import $ from 'jquery';
 
 const addSkill = currentSkill =>({
 	type: 'ADD_SKILL',
-	data: name 
+	data: name,
 })
 
-export const addSkillServer = (data, profileId)=>(dispatch)=>{
+const addSkillServer = (data, profileId)=>(dispatch)=>{
 	console.log(profileId, 'Did you get the profile ID?')
 	$.ajax({
-		url: '/http://localhost:8888/api/endorsements/' + profileId 
+		url: '/api/endorsements/' + profileId,
 		type:'POST',
-		data:data,
+		data:data
 	})
 	.done(data =>{
 		dispatch(addSkill(data))
 	})
 	return Promise.resolve();
-	}
 }
 
+export default {addSkillServer};
 
-// export const removeSkill =(id) =>{
+//export const removeSkill =(id) =>{
 // 	return {
 // 		type:'REMOVE_SKILL',
 // 		id

@@ -7,11 +7,10 @@ import {Provider} from 'react-redux';
 import Store from './store/store'; 
 
 /**** ACTIONS WILL BE IMPORTED HERE ****/
-// import  Actions from './actions/skills-action.js';
 import User_Actions from './actions/User-Actions';
 
 /****ADD YOUR COMPONENTS HERE****/
-import Skills from './components/skills/Skills.jsx';
+import Skills from './components/skills/Skills';
 import Blog from './components/blog/Blog';
 import NewBlog from './components/blog/NewBlog';
 import Login from './components/login/Login';

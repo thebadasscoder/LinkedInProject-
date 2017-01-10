@@ -7,20 +7,20 @@ import {Provider} from 'react-redux';
 import Store from './store/store'; 
 
 /****ADD YOUR COMPONENTS HERE****/
-
+import Resume from './resumeComponents/resumeContainer'
 
 const App = withRouter((props)=>(
   <div>
-    {/*<Navbar />*/}
     {props.children}
+    {"<Navbar />"}
+    <Resume/>
   </div>
 ))
 
 ReactDOM.render(
   <Provider store={Store}>
     <Router history={browserHistory}>
-      <Route path="/" component={App}>
-      </Route>
+      <Route path="/" component={App}/>
       {/*<Route path="/*" component={NotFound}/>*/}
     </Router>
   </Provider>,

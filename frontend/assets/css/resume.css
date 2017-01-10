@@ -35,8 +35,19 @@
   
 }
 
+#outputDiv {
+  height: 30px;
+  width: 200px;
+  
+}
+
+
 .eduOutput{
-  display: block;
+  /*display: block;*/
+  /*width: 1000;*/
+  border-color: white;
+  /*border-width: 10px;*/
+  border-style: dotted;
 /*  align-items: center;
   flex-direction: column;*/
 

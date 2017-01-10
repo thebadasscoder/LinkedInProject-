@@ -1,10 +1,14 @@
-// export const addSkill = (profileId, name)=>{
-// 	return {
-// 		type:'ADD_SKILL',
-// 		profileId,
-// 		name
-// 	}
-// }
+import $ from 'jQuery';
+
+export const addSkill = (profileId, name)=>{
+	return{
+		type:'ADD_SKILL',
+		profileId,
+		name
+	}
+}
+
+
 
 // export const removeSkill =(id) =>{
 // 	return {

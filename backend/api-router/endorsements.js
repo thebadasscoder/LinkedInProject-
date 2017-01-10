@@ -41,12 +41,6 @@ const deleteSkill = (req,res)=>{
 	})
 }
 
-// req.body: 
-// {
-// 	endorsedById: 1,
-// 	profileId: 2,
-// 	skillId: 3
-// }
 
 // //CREATING AN ENDORSEMENT 
 const newEndorsement = (req,res)=>{

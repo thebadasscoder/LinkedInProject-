@@ -6,9 +6,10 @@ import {Provider} from 'react-redux';
 /****ADD YOUR STORE HERE****/
 import Store from './store/store'; 
 
+/**** ACTIONS WILL BE IMPORTED HERE ****/
+// import  Actions from './actions/skills-action.js';
 
 /****ADD YOUR COMPONENTS HERE****/
-
 import Skills from './components/skills/Skills.jsx';
 import Blog from './components/blog/Blog';
 import NewBlog from './components/blog/NewBlog';

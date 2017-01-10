@@ -10,50 +10,15 @@ var EduForm = React.createClass({
     return {school:'',degree:'',date:'',clubs:'', society:'',image:''}
   },
 
-  handleChangeSchool(event){
+  handleChange(key,event){
     var data = event.target.value
     console.log(data)
-    this.setState({school:data})
+    this.setState({[key]:data})
     // store.dispatch(addSchool(data))
-    console.log(this.state.school)
+    // console.log(this.state. + [key])
 
   }, 
-  handleChangeDegree(event){
-      var data = event.target.value
-      // console.log(data)
-      this.setState({degree:data})
-      console.log(this.state.degree)
 
-    }, 
-  handleChangeDate(event){
-      var data = event.target.value
-      // console.log(data)
-      this.setState({date:data})
-      console.log(this.state.date)
-
-    },
-   handleChangeClubs(event){
-      var data = event.target.value
-      // console.log(data)
-      this.setState({clubs:data})
-      console.log(this.state.clubs)
-
-    }, 
-   handleChangeSociety(event){
-      var data = event.target.value
-      // console.log(data)
-      this.setState({society:data})
-      console.log(this.state.society)
-
-      }, 
-
-   handleChangeImage(event){
-      var data = event.target.value
-      // console.log(data)
-      this.setState({image:data})
-      console.log(this.state.image)
-
-      }, 
 
   handleSubmit(event){
     // this.setState({image:''})
@@ -83,12 +48,12 @@ var EduForm = React.createClass({
 
         <form onSubmit = {this.handleSubmit}>
           <div id = "educationFormStyle">
-            <input onChange = {this.handleChangeSchool} className = 'educationInputStyle' type ="text" placeholder = 'School '/>
-            <input onChange = {this.handleChangeDegree} className = 'educationInputStyle' type ="text" placeholder = 'Degree'/>
-            <input onChange = {this.handleChangeDate} className = 'educationInputStyle' type ="text" placeholder = 'Date'/>
-            <input onChange = {this.handleChangeClubs} className = 'educationInputStyle' type ="text" placeholder = 'Clubs'/>
-            <input onChange = {this.handleChangeSociety} className = 'educationInputStyle' type ="text" placeholder = 'Society'/>
-            <input onChange = {this.handleChangeImage} className = 'educationInputStyle' type ="text" placeholder = 'Image'/>
+            <input onChange = {this.handleChange.bind(this, 'school')} className = 'educationInputStyle' type ="text" placeholder = 'School '/>
+            <input onChange = {this.handleChange.bind(this, 'degree')} className = 'educationInputStyle' type ="text" placeholder = 'Degree'/>
+            <input onChange = {this.handleChange.bind(this, 'date')} className = 'educationInputStyle' type ="text" placeholder = 'Date'/>
+            <input onChange = {this.handleChange.bind(this, 'clubs')} className = 'educationInputStyle' type ="text" placeholder = 'Clubs'/>
+            <input onChange = {this.handleChange.bind(this, 'society')} className = 'educationInputStyle' type ="text" placeholder = 'Society'/>
+            <input onChange = {this.handleChange.bind(this, 'image') }className = 'educationInputStyle' type ="text" placeholder = 'Image'/>
             <input className = 'educationInputStyle' type = 'submit'/>
           </div>
         </form>

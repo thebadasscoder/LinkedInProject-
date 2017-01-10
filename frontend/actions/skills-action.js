@@ -5,10 +5,10 @@ const addSkill = currentSkill =>({
 	data: name 
 })
 
-const addSkillServer = (data)=>(dispatch)=>{
-	console.log('I just created a skill!')
+export const addSkillServer = (data, profileId)=>(dispatch)=>{
+	console.log(profileId, 'Did you get the profile ID?')
 	$.ajax({
-		url:
+		url: '/http://localhost:8888/api/endorsements/' + profileId 
 		type:'POST',
 		data:data,
 	})
@@ -18,8 +18,6 @@ const addSkillServer = (data)=>(dispatch)=>{
 	return Promise.resolve();
 	}
 }
-export default addSkillServer;
-
 
 
 // export const removeSkill =(id) =>{

@@ -19,7 +19,7 @@ const getUserServer = (data) => dispatch => {
 
 const postProfile = (userInfo) => dispatch => {
   // console.log(userInfo);
-  console.log(profileID);
+  // console.log(profileID);
   $.ajax({
     url: '/api/profile/',
     type: 'POST',

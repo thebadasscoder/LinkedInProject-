@@ -20,7 +20,7 @@ const mapStateToProps = (state, ownprops)=>{
 	// }
 	return{
 		user: state.user,
-		goTo: ownprops.router.push
+	 
 	}
 }
 

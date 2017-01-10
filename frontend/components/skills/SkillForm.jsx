@@ -1,5 +1,5 @@
 import React from 'react';
-import $ from 'jQuery';
+import $ from 'jquery';
 // import {addSkill} from '../actions/skills-action.js';
 
 const SkillForm = React.createClass({

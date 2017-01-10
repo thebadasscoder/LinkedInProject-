@@ -6,8 +6,12 @@ import {Provider} from 'react-redux';
 /****ADD YOUR STORE HERE****/
 import Store from './store/store'; 
 
+
 /****ADD YOUR COMPONENTS HERE****/
-import Skills from './components/Skills.jsx';
+
+import Skills from './components/skills/Skills.jsx';
+import Blog from './components/blog/Blog';
+import NewBlog from './components/blog/NewBlog';
 import Login from './components/login/Login';
 import Register from './components/login/Register';
 
@@ -25,6 +29,8 @@ ReactDOM.render(
     <Router history={browserHistory}>
       <Route path="/" component={App}>
       <Route path="endorsements" component={Skills}/>
+      <Route path="/blog" component={Blog} />
+      <Route path='/newblog' component={NewBlog} />
       <Route path="/login" component={Login}/>
       <Route path="/register" component={Register}/>
       </Route>

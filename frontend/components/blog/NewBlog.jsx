@@ -39,7 +39,7 @@ const NewBlog = React.createClass({
 			  <form className='create-blog' onClick={this.handleSubmit} >
 			        Title: <input type='text' name='t1' onChange={this.handleTitle} /> <br/>
 			        Contents:<input type='text' name='t2' placeholder='Plz enter your text here' 
-			                 /> <br/>
+			            onChange={this.handleContent}     /> <br/>
 			        Author: <input type= 'text' name='t3' onChange={this.handleAuthor} /> <br/>
 			        <input type='submit'  />
               </form>

@@ -62,7 +62,7 @@ const getBlog = (req, res) => {
 	    	res.send(data)
 	    })
 	    .catch((error) => {
-	    	res.send(500);
+	    	res.sendStatus(500);
 	    })
 };
 

@@ -50,16 +50,29 @@ const updateBlog = (req, res) => {
 	   	res.send(200)
 	})
 	   
-	   .catch((error)=>{
+	   .catch((error) => {
 		res.sendStatus(500);
 	})
 
 };
+const getBlog = (req, res) => {
+	blog.findOne({
+		where: { id: req.params.id }
+	})
+	    .then(function(data) {
+	    	res.send(data)
+	    })
+	    .catch((error) => {
+	    	res.send(500);
+	    })
+};
+
 
 router.route('/')
 	  .get(getAllBlog)
 	  .post(createBlog)
 router.route('/:id')
+	  .get(getBlog)
 	  .put(updateBlog)
 
 

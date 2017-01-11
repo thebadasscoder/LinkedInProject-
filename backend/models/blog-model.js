@@ -3,16 +3,19 @@
 module.exports = function(sequelize, DataTypes) {
     var blog = sequelize.define('blog', {
         title: {
-             type: DataTypes.STRING
+             type: DataTypes.STRING,
+             allowNull: false
         },
         text_body: {
-             type: DataTypes.TEXT
+             type: DataTypes.TEXT,
+             allowNull: false
         },
         author: {
-             type: DataTypes.STRING
+             type: DataTypes.STRING,
+             allowNull: false
         },
         likes: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.INTEGER
             
         },
         dislikes: {

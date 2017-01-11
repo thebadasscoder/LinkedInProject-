@@ -2,7 +2,7 @@ import $ from 'jquery';
 
 const addSkill = currentSkill =>({
 	type: 'ADD_SKILL',
-	data: name,
+	data: currentSkill
 })
 
 const addSkillServer = (data, profileId)=>(dispatch)=>{
@@ -13,6 +13,7 @@ const addSkillServer = (data, profileId)=>(dispatch)=>{
 		data:data
 	})
 	.done(data =>{
+		console.log(data, 'DATA!')
 		dispatch(addSkill(data))
 	})
 	return Promise.resolve();

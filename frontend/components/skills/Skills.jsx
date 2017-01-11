@@ -2,6 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import {Link} from 'react-router';
 import SkillForm from './SkillForm';
+// import EndorseForm from '../endorsements/EndorsementForm';
 
 
 const Skills = React.createClass({
@@ -24,10 +25,13 @@ componentDidMount(){
 		})
 		return(
 		<div>
-			<h1> Skills & Endorsements </h1>
+			<h1> Skills</h1>
 			<h3> ProfileId#: 2 </h3>
 			<SkillForm/>
 			{SkillsDisplay}
+
+			<h1>MAKE AN ENDORSEMENT:</h1>
+
 		</div>
 		)
 	}

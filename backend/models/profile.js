@@ -35,7 +35,6 @@ module.exports = function(sequelize, DataTypes) {
             associate: function(models) {
                 //Using additional options like CASCADE etc for demonstration
                 //Can also simply do Task.belongsTo(models.User);
-                profile.hasMany(models.endorsement);
                 profile.belongsTo(models.Resume,{
                     defaultValue: null,
                 });

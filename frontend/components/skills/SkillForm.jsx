@@ -27,7 +27,7 @@ render(){
 })
 //This is creating a new state by passing in an empty object 
 const mapStateToProps = (state, ownprops)=>{
-	return {profileId:2};
+	return {profileId:state.user.id};
 }
 
 const mapDispatchToProps = (dispatch)=>{

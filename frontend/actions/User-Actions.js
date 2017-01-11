@@ -19,6 +19,7 @@ const getUserServer = (data) => dispatch => {
 
 const postProfile = (userInfo) => dispatch => {
   // console.log(userInfo);
+  // console.log(profileID);
   $.ajax({
     url: '/api/profile/',
     type: 'POST',
@@ -35,9 +36,8 @@ const postProfile = (userInfo) => dispatch => {
 }
 
 const validate = () => (dispatch) => {
-  // console.log("validate")
   $.ajax({
-    url: '/api/user/validate/1',
+    url: '/api/profile/validate',
     type: 'get',
   })
   .done(data=>{

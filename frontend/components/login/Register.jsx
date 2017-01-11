@@ -29,7 +29,9 @@ const Register = React.createClass({
 		formData.append('username', this.state.username);
 		formData.append('email', this.state.email);
 		formData.append('password', this.state.password);
-		formData.append('image', this.state.image, this.state.image.name);
+		if(this.state.image){
+			formData.append('image', this.state.image, this.state.image.name);
+		}
 		this.props.register(formData);
 	},
 	render(){
@@ -58,7 +60,9 @@ const Register = React.createClass({
 
 
 const mapStateToProps = (state, ownprops)=>{
-	return{}
+	return{
+		user: state.user
+	}
 }
 
 function mapDispatchToProps(dispatch) {

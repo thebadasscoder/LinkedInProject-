@@ -13,7 +13,10 @@ const Login = React.createClass({
 	},
 	submit(e){
 		e.preventDefault();
-		this.props.login(this.state);
+		this.props.login(this.state)
+		.then(()=>{
+			this.props.router.push('/profile');
+		})
 	},
 	redirect(e){
 		this.props.router.push('/register');

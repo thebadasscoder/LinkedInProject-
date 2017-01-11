@@ -16,9 +16,8 @@ import Blog from './components/blog/Blog';
 import NewBlog from './components/blog/NewBlog';
 import Login from './components/login/Login';
 import Register from './components/login/Register';
+import DetailBlog from './components/blog/DetailBlog';
 import Profile from './components/home/profile/Profile';
-
-
 
 const App = withRouter((props)=>(
   <div>
@@ -38,6 +37,7 @@ ReactDOM.render(
         <Route path="/endorsements" component={Skills}/>
         <Route path="/blog" component={Blog} />
         <Route path='/newblog' component={NewBlog} />
+        <Route path="/blog/:id" component={DetailBlog} />
         <Route path="/login" component={Login}/>
         <Route path="/register" component={Register}/>
         <Route path="/profile" component={Profile} />

@@ -34,17 +34,22 @@ const NewBlog = React.createClass({
 
 	render: function(){
 		return(
-			<div>
+			<div className='new-blog'>
 			  <h1> Create Blog </h1>
 			  <form className='create-blog' onClick={this.handleSubmit} >
-			  Title: <input type='text' name='t1' onChange={this.handleTitle} /> <br/>
-			  Contents:<input type='text' name='t2' placeholder='Plz enter your text here' onChange={this.handleContent}/> <br/>
-			  Author: <input type= 'text' name='t3' onChange={this.handleAuthor} />
-			  <input type='submit'  />
+			        Title: <input type='text' name='t1' onChange={this.handleTitle} /> <br/>
+			        Contents:<input type='text' name='t2' placeholder='Plz enter your text here' 
+			            onChange={this.handleContent}     /> <br/>
+			        Author: <input type= 'text' name='t3' onChange={this.handleAuthor} /> <br/>
+			        <input type='submit'  />
               </form>
 		    </div>
 	    )
 	}
 });
+//
+//
+//
+//
 
 export default NewBlog;

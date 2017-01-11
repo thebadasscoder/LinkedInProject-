@@ -13,7 +13,6 @@ const addSkillServer = (data, profileId)=>(dispatch)=>{
 		data:data
 	})
 	.done(data =>{
-		console.log(data, 'DATA!')
 		dispatch(addSkill(data))
 	})
 	return Promise.resolve();

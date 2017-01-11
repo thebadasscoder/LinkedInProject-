@@ -13,19 +13,19 @@ const getAllSkills = (req,res)=>{
 			res.send(data);
 		})
 		.catch((error)=>{
-			res.send(error);
+			res.send(500);
 		})
 }
 
 
-//CREATING A  NEW SKILL 
+//CREATING A  NEW SKILL AND THE ENDORSEMENTS WILL HAVE A DEFAULT VALUE OF ZERO WHICH I DEFINED IN MY MODELS
 const newSkill = (req,res)=>{
 	Skills.create({profileId:req.params.profileId, name:req.body.name})
 	.then((data)=>{
 		res.send(data);
 	})
 	.catch((error)=>{
-		res.send(error);
+		res.send(500);
 	})
 }
 

@@ -13,6 +13,7 @@ import Blog from './components/blog/Blog';
 import NewBlog from './components/blog/NewBlog';
 import Login from './components/login/Login';
 import Register from './components/login/Register';
+import DetailBlog from './components/blog/DetailBlog';
 
 
 
@@ -28,6 +29,7 @@ ReactDOM.render(
     <Router history={browserHistory}>
       <Route path="/" component={App}>
       <Route path="/blog" component={Blog} />
+      <Route path="/blog/:id" component={DetailBlog} />
       <Route path='/newblog' component={NewBlog} />
       <Route path="/login" component={Login}/>
       <Route path="/register" component={Register}/>

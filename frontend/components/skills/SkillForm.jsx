@@ -12,9 +12,7 @@ nameChange(e){
 },
 createASkill(e){
 e.preventDefault();
-	console.log('this is the createASkill function')
-	this.props.addSkills(this.state, this.props.profileId)
-
+this.props.addSkills(this.state, this.props.profileId)
 },
 render(){
 		return (
@@ -25,15 +23,13 @@ render(){
 		)
 	}
 })
-//This is creating a new state by passing in an empty object 
+//This is creating a new state
 const mapStateToProps = (state, ownprops)=>{
 	return {profileId:state.user.id};
 }
-
+//This is what's dispatching the addSkill action
 const mapDispatchToProps = (dispatch)=>{
 	return {addSkills: bindActionCreators(Skills_Actions.addSkillServer, dispatch)}
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SkillForm);
-
-// export default skillForm;

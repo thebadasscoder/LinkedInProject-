@@ -6,7 +6,7 @@ const addSkill = currentSkill =>({
 })
 
 const addSkillServer = (data, profileId)=>(dispatch)=>{
-	console.log(profileId, 'Did you get the profile ID?')
+	console.log(profileId, 'Did you get the profile ID TO ADD?')
 	$.ajax({
 		url: '/api/endorsements/' + profileId,
 		type:'POST',
@@ -27,10 +27,18 @@ export default {addSkillServer};
 // 	}
 // }
 
-// export const displaySkill =(profileId)=>{
-// 	return {
+// const getSkill = currentSkill=>({
 // 		type: 'DISPLAY_SKILL',
-// 		profileId
-// 	}
+// 		data: currentSkill
+// })
+
+// const getSkillServer = (data, profileId)=>(dispatch)=>{
+// 	console.log(profileId, 'Did you get profile ID TO GET??')
+// 	$.ajax({
+// 		url:'/api/endorsements/' + profileId
+// 		type:
+// 		data:data
+// 	})
 // }
+
 

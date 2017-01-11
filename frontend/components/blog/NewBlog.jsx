@@ -50,5 +50,6 @@ const NewBlog = React.createClass({
 //
 //
 //
+//
 
 export default NewBlog;

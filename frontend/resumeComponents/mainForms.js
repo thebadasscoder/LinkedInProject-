@@ -1,11 +1,11 @@
 import React from 'react'
 import $ from 'jquery'
-import {addSchool} from './educationActions'
+// import {addSchool} from './educationActions'
 // import store from '../store/store'
 import EducationForm from './educationForm'
-import ExperienceForm from './experienceForm'
-import LanguageForm from './languageForm'
-import VolunteerForm from './volunteerForm'
+// import ExperienceForm from './experienceForm'
+// import LanguageForm from './languageForm'
+// import VolunteerForm from './volunteerForm'
 import {Link} from 'react-router'
 
 

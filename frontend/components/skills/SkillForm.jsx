@@ -17,7 +17,7 @@ this.props.addSkills(this.state, this.props.profileId)
 render(){
 		return (
 			<div>
-			<input type="text" placeholder="enter a new skill" onChange={this.nameChange} value={this.state.name}></input>
+			<input type="text"  className ="form-control"placeholder="enter a new skill" onChange={this.nameChange} value={this.state.name}></input>
 			<button type="button" onClick={this.createASkill}>+</button>
 			</div>
 		)

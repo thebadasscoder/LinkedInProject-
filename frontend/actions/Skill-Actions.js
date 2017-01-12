@@ -18,27 +18,25 @@ const addSkillServer = (data, profileId)=>(dispatch)=>{
 	return Promise.resolve();
 }
 
-export default {addSkillServer};
+const makeEndorsement = (data, profileId, id)=>(dispatch)=>{
+	$.ajax({
+		url: '/api/endorsements/' + profileId + '/' + id,
+		type: 'PUT',
+		data: data
+	})
+	.done(data =>{
+		dispatch(addSkill(data))
+	})
+	return Promise.resolve();
+}
+
+export default {addSkillServer, makeEndorsement};
 
 //export const removeSkill =(id) =>{
 // 	return {
 // 		type:'REMOVE_SKILL',
 // 		id
 // 	}
-// }
-
-// const getSkill = currentSkill=>({
-// 		type: 'DISPLAY_SKILL',
-// 		data: currentSkill
-// })
-
-// const getSkillServer = (data, profileId)=>(dispatch)=>{
-// 	console.log(profileId, 'Did you get profile ID TO GET??')
-// 	$.ajax({
-// 		url:'/api/endorsements/' + profileId
-// 		type:
-// 		data:data
-// 	})
 // }
 
 

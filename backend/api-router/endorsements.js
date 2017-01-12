@@ -41,6 +41,17 @@ const deleteSkill = (req,res)=>{
 	})
 }
 
+const makeEndorsement = (req,res)=>{
+	Skills.update({endorsement: parseInt(req.body.endorsement) + 1}, {where:{profileId:req.params.profileId, id:req.params.id}})
+	.then((data)=>{
+		res.send(data);
+	})
+	.catch((error)=>{
+		res.sendStatus(500);
+	})
+}
+router.route('/:profileId/:id')
+	.put(makeEndorsement)
 
 router.route('/:profileId')
 	.get(getAllSkills) 

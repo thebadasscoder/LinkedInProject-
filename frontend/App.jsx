@@ -18,6 +18,7 @@ import Register from './components/login/Register';
 import DetailBlog from './components/blog/DetailBlog';
 import Profile from './components/home/profile/Profile';
 
+
 const App = withRouter((props)=>(
   <div>
     {/*<Navbar />*/}

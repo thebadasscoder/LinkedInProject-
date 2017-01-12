@@ -1,0 +1,75 @@
+ul.skills {
+display: flex;
+list-style-type: none;
+display: flex;
+justify-content: flex-start;
+ }
+
+li.tag{
+	font-family:Helvetica,Arial, sans-serif;
+	background: #588fe5;
+	display:inline-block;
+	color:#fff;
+	position:relative;
+	padding:6px;
+	border-top-left-radius: 14px;
+	border-bottom-left-radius:14px;
+	border-top-right-radius: 14px;
+	border-bottom-right-radius:14px;
+	margin: 0 px 0 0;
+	margin-left: -5px;
+	text-decoration: none;
+}
+
+li.tag:hover{
+	background-color: #739fe4;
+}
+
+li.tag:before{
+/*background: #fff;*/
+width:10px;
+height:10px;
+content: "";
+display:inline-block;
+border-radius:20px;
+margin-right: -20px;
+margin: 0 5px 0 0;
+}
+/*
+li.tag:after{
+display:inline-block;
+border:19px solid;
+border-color:transparent transparent transparent #588fe5;
+height: 0;
+width: 0;
+position: absolute;
+right: -35px;
+top:-2px;
+content:"";
+display: inline-block;
+}*/
+
+li.tag:hover:after{
+	border-color: transparent transparent transparent #739fe4;
+}
+
+button.btn{
+	margin-left: px;
+	background: transparent;
+	border: none !important ;
+	opacity:.5;
+	width:5px;
+	margin-left: -2px;
+	font-size:14px;
+	color: white;
+}
+
+input.form-control{
+	width: 200px;
+}
+
+
+h1{
+	font-family: Simplifica;
+	color: #95a5a6
+}

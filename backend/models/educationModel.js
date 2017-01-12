@@ -11,10 +11,10 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: true,
         },
-        edudate: {
-            type: DataTypes.STRING,
-            allowNull: true,
-        },
+        // education: {
+        //     type: DataTypes.STRING,
+        //     allowNull: true,
+        // },
         clubs: {
             type: DataTypes.STRING,
             allowNull: true,
@@ -35,9 +35,11 @@ module.exports = function(sequelize, DataTypes) {
           associate: function(models) {
         // Using additional options like CASCADE etc for demonstration
         // Can also simply do Task.belongsTo(models.User);
+        Education.belongsTo(models.profile);
         // Education.belongsToMany(models.Song, {through: "SongFeatures"});
         // Education.belongsTo(models.Resume)
-        Education.hasMany(models.Resume,{ foreignKey: 'education_fields'})
+        // Education.hasMany(models.Resume,{ foreignKey: 'education_fields'})
+
         // Resume.hasMany(models.Language,{ foreignKey: 'resume_fields'}),
         // Resume.hasMany(models.Experience,{ foreignKey: 'resume_fields'}),
         // Resume.hasMany(models.Education,{ foreignKey: 'resume_fields'})

@@ -4,24 +4,21 @@ const Education = require('../models/index').Education
 const router = require('express').Router();
 var bodyParser = require('body-parser');
 
-app.use(bodyParser.json()); // for parsing application/json
-app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-
 
 // this will handle any routes going to 
-// localhost:8888/api/profile/*
+// localhost:8888/api/education/*
 
 const createEducation = (req,res)=>{
   // res.send('post works')
   Education.create({
-    // where: {title: 'aProject'},
-    // attributes: ['id', ['name', 'title']]
     school: req.body.school,
     degree: req.body.degree,
     date: req.body.date,
     clubs: req.body.clubs,
     society: req.body.society,
-    image: req.body.image
+    image: req.body.image,
+    // education: req.body.education
+    profileId:req.body.profileId
   }).then(()=>{
     res.sendStatus(200)
   })
@@ -36,6 +33,21 @@ const deleteEducation = (req,res)=>{
   })
   .then(()=>{
     res.sendStatus(200)
+  })
+}
+
+const getEducation = (req,res)=>{
+  console.log('im in geteducation')
+  Education.findOne({
+    where: {
+      profileId: req.params.id
+    }
+  })
+  .then((data)=>{
+    res.send(data)
+  })
+  .catch((err)=>{
+    res.send(err)
   })
 }
 
@@ -63,10 +75,10 @@ const updateEducation = (req,res)=>{
 
 
 router.route('/')
-  .post(createEducation)
+  .post(createEducation);
 router.route('/:id')
-  .delete(deleteEducation)
-router.route('/:id')
+  .get(getEducation)
+  // .delete(deleteEducation);
   .put(updateEducation)
 
 

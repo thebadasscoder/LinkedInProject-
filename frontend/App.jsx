@@ -18,7 +18,7 @@ import NewBlog from './components/blog/NewBlog';
 import Login from './components/login/Login';
 import Register from './components/login/Register';
 import Profile from './components/home/profile/Profile';
-import ResumeDisplay from './resumeDisplay'
+// import ResumeDisplay from './resumeDisplay'
 import Resume from './resumeComponents/resume'
 
 const App = withRouter((props)=>(

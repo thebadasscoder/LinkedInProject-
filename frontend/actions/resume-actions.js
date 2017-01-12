@@ -19,5 +19,5 @@ const getResumeServer = (profileID) => dispatch => {
 
 
 export default  {
-    getResumeServer,
+    getResumeServer
 }

@@ -27,10 +27,14 @@ const Blog = React.createClass({
 			<div>
                <h1> Blog Posts Page</h1>
                {this.state.postsList.map(function(val, indx){
-               	return <li key={indx}> id: {val.id} <br/>
-               	title: {val.title} <br/>
-               	text: {val.text_body} <br/>
-               	author: {val.author}
+               	return <li key={indx}>
+               	       <Link to={'/blog/'+ val.id} > 
+               	       id: {val.id}  </Link>
+               	       <br/>
+               	       title: {val.title} <br/>
+               	       text: {val.text_body} <br/>
+               	       author: {val.author}
+
                	</li>
                })}
         	</div>

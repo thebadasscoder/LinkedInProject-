@@ -29,7 +29,12 @@ const postProfile = (userInfo) => dispatch => {
     data: userInfo,
   })
   .done(data => {
-    dispatch(getUser(data))
+    let username = userInfo.getAll('username')
+    let password = userInfo.getAll('password')
+    dispatch(getUserServer({
+      username,
+      password,
+    }));
   })
   // returning a promise so .then can be called if needed
   return Promise.resolve();

@@ -3,11 +3,18 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
 const Profile = (props)=>(
-	<div>
-		<img src={props.user.image} width="200" height="200"/>
-		<p>{props.user.name}</p>
-		<p>{props.user.username}</p>
-		<p>{props.user.email}</p>
+	<div className="profileFlex">
+		<div>
+		<img src={props.user.image} width="200" height="200" className=" profileImage "/>
+		</div>
+		<div className="profilePadded" >
+		<p className="" >name:</p>
+		<p className="" >{props.user.name}</p>
+		<p className="" >username:</p>
+		<p className="" >{props.user.username}</p>
+		<p className="" >email:</p>
+		<p className="" >{props.user.email}</p>
+		</div>
 	</div>
 
 )
@@ -20,7 +27,6 @@ const mapStateToProps = (state, ownprops)=>{
 	// }
 	return{
 		user: state.user,
-	 
 	}
 }
 

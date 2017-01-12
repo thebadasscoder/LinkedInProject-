@@ -20,7 +20,9 @@ const NewBlog = React.createClass({
     	console.log('author '  + this.state.author);
     },
     handleSubmit: function(e2){
+
     	e2.preventDefault()
+		
 		$.ajax({
 			url:'/api/blog',
 			type: 'POST',
@@ -28,28 +30,32 @@ const NewBlog = React.createClass({
 
         })
         .done((data) => {
+        	
         	console.log('Received the data')
         })
+        this.setState({title:'', text: '', author: ''})
 	},
 
 	render: function(){
 		return(
 			<div className='new-blog'>
-			  <h1> Create Blog </h1>
-			  <form className='create-blog' onClick={this.handleSubmit} >
-			        Title: <input type='text' name='t1' onChange={this.handleTitle} /> <br/>
-			        Contents:<input type='text' name='t2' placeholder='Plz enter your text here' 
-			            onChange={this.handleContent}     /> <br/>
-			        Author: <input type= 'text' name='t3' onChange={this.handleAuthor} /> <br/>
+			  <h1 className="blog"> Create A Blog!</h1>
+			
+			  <form className='create-blog' onSubmit={this.handleSubmit} >
+                    Title: <input type='text' className="title" name='t1' 
+                      onChange={this.handleTitle} value={this.state.title} /> <br/>
+			        <input type='text' className="body" name='t2' placeholder='Plz enter your text here' 
+			          onChange={this.handleContent}    value={this.state.text} /> <br/>
+			        Author:<input type='text' className="author" name='t3' 
+			          onChange={this.handleAuthor} value={this.state.author}/> <br/>
+			        {/*Picture:<br/> <input type='file' name='pic' accept='image/*' /> <br/>*/}
 			        <input type='submit'  />
               </form>
+           
 		    </div>
 	    )
 	}
 });
-//
-//
-//
-//
+
 
 export default NewBlog;

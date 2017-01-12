@@ -5,15 +5,27 @@ const addSkill = currentSkill =>({
 	data: currentSkill
 })
 
+const getSkills = (profileId)=>(dispatch)=>{
+	console.log("IM IN getSkills")
+	if(profileId){
+		$.ajax({
+			url:'/api/endorsements/' + profileId,
+			type:'GET'		
+		})
+		.done(data =>{
+			dispatch(addSkill(data));
+		})
+	}
+}
+
 const addSkillServer = (data, profileId)=>(dispatch)=>{
-	console.log(profileId, 'Did you get the profile ID TO ADD?')
 	$.ajax({
 		url: '/api/endorsements/' + profileId,
 		type:'POST',
-		data:data
+		data: data
 	})
 	.done(data =>{
-		dispatch(addSkill(data))
+		getSkills(profileId);
 	})
 	return Promise.resolve();
 }
@@ -25,12 +37,16 @@ const makeEndorsement = (data, profileId, id)=>(dispatch)=>{
 		data: data
 	})
 	.done(data =>{
-		dispatch(addSkill(data))
+		getSkills(profileId);
 	})
 	return Promise.resolve();
 }
 
-export default {addSkillServer, makeEndorsement};
+export default {
+	addSkillServer,
+	makeEndorsement,
+	getSkills,
+};
 
 //export const removeSkill =(id) =>{
 // 	return {

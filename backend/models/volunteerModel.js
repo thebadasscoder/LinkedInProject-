@@ -5,19 +5,19 @@ module.exports = function(sequelize, DataTypes) {
     var Volunteer = sequelize.define("Volunteer", {
         organization: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         role: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
-        date: {
+        voldate: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
-        description: {
+        voldescription: {
             type: DataTypes.TEXT,
-            allowNull: false,
+            allowNull: true,
         },
       
     }, {

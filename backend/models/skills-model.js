@@ -15,7 +15,7 @@ module.exports = function(sequelize, DataTypes) {
         Skills.belongsTo(models.profile, {
           onDelete: "CASCADE",
           foreignKey: {
-            allowNull: false
+            allowNull: true
           }
         })
       }

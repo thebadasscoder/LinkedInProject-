@@ -3,23 +3,23 @@ module.exports = function(sequelize, DataTypes) {
     var Experience = sequelize.define("Experience", {
         company: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         title: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         location: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         period: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
-        description: {
+        expdescription: {
             type: DataTypes.TEXT,
-            allowNull: false,
+            allowNull: true,
         },
     }, {
         classMethods: {

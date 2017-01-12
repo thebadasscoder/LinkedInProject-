@@ -4,31 +4,31 @@ module.exports = function(sequelize, DataTypes) {
     var profile = sequelize.define("profile", {
         name: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         username: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         image: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         email: {
             type: DataTypes.STRING,
             validate:{
             	isEmail: true, 
             },
-            allowNull: false,
+            allowNull: true,
         },
         password: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         emailverification: {
-        	defaultValue: false,
+        	defaultValue: true,
             type: DataTypes.BOOLEAN,
-            allowNull: false,
+            allowNull: true,
         },
     }, {
         classMethods: {

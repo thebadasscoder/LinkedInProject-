@@ -1,0 +1,120 @@
+/*ALL EDUCATION COMPONENT CSS//////*/
+
+#doneButtonPos { 
+  display: flex;
+  justify-content: center;
+  /*width: 100px;*/
+  /*align-items: center;*/
+
+}
+#doneButtonStyle { 
+ /* display: flex;
+  justify-content: center;*/
+  width: 100px;
+  /*align-items: center;*/
+
+}
+
+#experienceform {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+
+}
+
+#left {
+  display:flex;
+  flex-direction: column;
+  width:600px;
+  background-color: red;
+}
+
+#exleft {
+  width:700px;
+  background-color: red;
+}
+#right {
+  width:700px;
+  background-color: yellow;
+}
+
+
+#form {
+  display: flex;
+  flex-direction: column;
+}
+
+#resume {
+  width: 250px;
+  height: 235px;
+
+} 
+
+#eduDisplay{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /*background: nd-color: orange;*/
+  width: 200px;
+
+  /*align-items:  flex-start;*/
+}
+
+#image{
+  display: flex;
+  flex-direction: row;
+
+}
+
+#educationInput {
+  display: flex;
+  flex-direction: column;
+  /*background-color: red;*/
+  width: 200px;
+  height: 200px;
+}
+
+#educationMainDiv {
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+}
+
+#educationFormStyle {
+  display: flex;
+  flex-direction: row;
+  align-items:  center;
+
+  
+}
+.educationInputStyle {
+  height: 30px;
+  width: 500px;
+  
+}
+
+#outputDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  background-color: orange;
+  width: 100px;
+  
+}
+
+
+.eduOutput{
+  /*display: block;*/
+  /*width: 1000;*/
+  border-color: white;
+  /*border-width: 10px;*/
+  border-style: dotted;
+/*  align-items: center;
+  flex-direction: column;*/
+
+  /*height: 100px;*/
+}
+

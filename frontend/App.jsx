@@ -14,13 +14,12 @@ import User_Actions from './actions/User-Actions';
 import Skills from './components/skills/Skills.jsx';
 import Blog from './components/blog/Blog';
 import NewBlog from './components/blog/NewBlog';
-import Login from './components/login/Login';
-import Register from './components/login/Register';
+import LoginPage from './components/login/LoginPage';
 import DetailBlog from './components/blog/DetailBlog';
 import Profile from './components/home/profile/Profile';
 
 const App = withRouter((props)=>(
-  <div>
+  <div className="mainComponent">
     {/*<Navbar />*/}
     {props.children}
   </div>
@@ -34,12 +33,11 @@ ReactDOM.render(
   <Provider store={Store}>
     <Router history={browserHistory}>
       <Route path="/" component={App} onEnter={validate}>
+        <IndexRoute component={LoginPage}/>
         <Route path="/endorsements" component={Skills}/>
         <Route path="/blog" component={Blog} />
         <Route path='/newblog' component={NewBlog} />
         <Route path="/blog/:id" component={DetailBlog} />
-        <Route path="/login" component={Login}/>
-        <Route path="/register" component={Register}/>
         <Route path="/profile" component={Profile} />
       </Route> 
       {/*<Route path="/*" component={NotFound}/>*/}

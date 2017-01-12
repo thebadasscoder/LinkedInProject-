@@ -11,7 +11,7 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: true,
         },
-        date: {
+        edudate: {
             type: DataTypes.STRING,
             allowNull: true,
         },

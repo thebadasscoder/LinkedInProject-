@@ -1,16 +1,17 @@
 import React from 'react'
 // import addArtist from '../actions'
 import css from '../assets/css/resume.css'
-import EduForm from './educationForm'
+// import EduForm from './educationForm'
+// import EducationDisplay from './EducationDisplay'
 
 
 
 const Education = ({text, addEducation})=>(
 
 
+        // <EducationDisplay />
+        // <EduForm />
     <div >
-
-        <EduForm />
    
     </div>
 

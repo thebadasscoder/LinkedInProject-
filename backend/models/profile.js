@@ -4,42 +4,45 @@ module.exports = function(sequelize, DataTypes) {
     var profile = sequelize.define("profile", {
         name: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         username: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         image: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         email: {
             type: DataTypes.STRING,
             validate:{
             	isEmail: true, 
             },
-            allowNull: false,
+            allowNull: true,
         },
         password: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         emailverification: {
         	defaultValue: true,
             type: DataTypes.BOOLEAN,
-            allowNull: false,
+            allowNull: true,
         },
     }, {
         classMethods: {
-          associate: function(models) {
-        //Using additional options like CASCADE etc for demonstration
-        //Can also simply do Task.belongsTo(models.User);
-        profile.hasMany(models.endorsement),
-        profile.hasMany(models.skill, {
-          onDelete: "CASCADE",
-        });
-        }
+            associate: function(models) {
+                //Using additional options like CASCADE etc for demonstration
+                //Can also simply do Task.belongsTo(models.User);
+                profile.hasMany(models.endorsement);
+                profile.belongsTo(models.Resume,{
+                    defaultValue: null,
+                });
+                profile.hasMany(models.skill, {
+                  onDelete: "CASCADE",
+                });
+            }
         }
     });
 

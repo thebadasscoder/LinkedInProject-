@@ -54,7 +54,7 @@ makeEndorsement(id, e){
 })
 
 const mapStateToProps = (state, ownprops)=>{
-	console.log(state)
+	// console.log(state)
 	return {
 		profileId:state.user.id,
 		skills: state.skills

@@ -6,7 +6,7 @@ const addSkill = currentSkill =>({
 })
 
 const getSkills = (profileId)=>(dispatch)=>{
-	console.log("IM IN getSkills")
+	// console.log("IM IN getSkills")
 	if(profileId){
 		$.ajax({
 			url:'/api/endorsements/' + profileId,

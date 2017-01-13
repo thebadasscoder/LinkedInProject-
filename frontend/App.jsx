@@ -17,6 +17,7 @@ import LoginPage from './components/login/LoginPage';
 import DetailBlog from './components/blog/DetailBlog';
 import Resume from './resumeComponents/resume';
 import Home from './components/home/index';
+import EducationDisplay from './components/home/resumeDisplay/EducationDisplay';
 
 
 const App = withRouter((props)=>(
@@ -34,6 +35,7 @@ const validate = ()=>{
 //   console.log(nextState);
 //   store.dispatch(Resume_Actions.getResumeServer())
 // }
+        // <Route path="/educationDisplay" component={EducationDisplay} />
 
 ReactDOM.render(
   <Provider store={Store}>

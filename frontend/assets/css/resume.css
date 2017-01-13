@@ -1,4 +1,23 @@
 /*ALL EDUCATION COMPONENT CSS//////*/
+#schoolDisplay {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.schoolDisplayFields {
+  margin-left: 50px;
+ /* display: flex;
+  flex-direction: row;
+  justify-content: flex-start;*/
+
+}
+#schoolDisplayFields {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px
+  margin-bottom: 100px
+  justify-content: flex-start;
+}
 
 #doneButtonPos { 
   display: flex;

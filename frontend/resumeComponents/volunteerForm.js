@@ -60,12 +60,9 @@ var VolunteerForm = React.createClass({
   render(){
     return(
       <div >
-      <div style = {{height:100}}>
-
-      </div>
+    
         <div id = "educationFormStyle">
           <div id = 'left'> 
-          VolunteerForm
 
           </div>
             <form id = 'form' onSubmit = {this.handleVolSubmit}>
@@ -79,7 +76,6 @@ var VolunteerForm = React.createClass({
              
             </form>
           <div id = 'right'>
-          VolunteerForm
           </div>
        
         </div>

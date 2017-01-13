@@ -68,7 +68,7 @@ var EducationForm = React.createClass({
       <div >
         <div id = "educationFormStyle">
           <div id = 'left'> 
-          education
+          
 
           </div>
             <form id = 'form' onSubmit = {this.handleEduSubmit}>
@@ -84,7 +84,6 @@ var EducationForm = React.createClass({
              
             </form>
           <div id = 'right'>
-          education
           </div>
        
         </div>

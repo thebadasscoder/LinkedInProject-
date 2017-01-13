@@ -18,6 +18,7 @@ import DetailBlog from './components/blog/DetailBlog';
 import Resume from './resumeComponents/resume';
 import Home from './components/home/index';
 import EducationDisplay from './components/home/resumeDisplay/EducationDisplay';
+// import ExperienceDisplay from './components/home/resumeDisplay/ExperiDisplay';
 
 
 const App = withRouter((props)=>(

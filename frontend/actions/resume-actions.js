@@ -18,6 +18,22 @@ const getResumeServer = (profileID) => dispatch => {
 }
 
 
+
+
+const getResumeExperience = (profileID) => dispatch => {
+  $.ajax({
+    url: '/api/experience/'+ profileID,
+    type: 'GET',
+
+  })
+  .done(data => {
+    dispatch(getResume(data));
+  })
+  return Promise.resolve();
+}
+
+
 export default  {
-    getResumeServer
+    getResumeServer,
+    getResumeExperience,
 }

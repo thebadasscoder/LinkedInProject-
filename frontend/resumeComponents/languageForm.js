@@ -55,12 +55,10 @@ var LanguageForm = React.createClass({
   render(){
     return(
       <div >
-      <div style = {{height:100}}>
-
-      </div>
+      
         <div id = "educationFormStyle">
           <div id = 'left'> 
-          language
+          
 
           </div>
             <form id = 'form' onSubmit = {this.handleLanSubmit}>
@@ -72,7 +70,6 @@ var LanguageForm = React.createClass({
              
             </form>
           <div id = 'right'>
-          Language
           </div>
        
         </div>

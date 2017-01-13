@@ -18,7 +18,7 @@ const createLanguage = (req,res)=>{
    proficiency: true
 
   }).then(()=>{
-    res.send('createLanguage')
+    res.sendStatus(200)
   })
 }
 
@@ -30,7 +30,7 @@ const deleteLanguage = (req,res)=>{
     }
   })
   .then(()=>{
-    res.send('deleted')
+    res.sendStatus(200)
   })
 }
 
@@ -48,7 +48,7 @@ const updateLanguage = (req,res)=>{
         }
   })
   .then(()=>{
-    res.send('updated')   
+    res.sendStatus(200)   
   })
 }
 

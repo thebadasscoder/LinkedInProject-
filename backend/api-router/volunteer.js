@@ -16,10 +16,10 @@ const createVolunteer = (req,res)=>{
   Volunteer.create({
     // where: {title: 'aProject'},
     // attributes: ['id', ['name', 'title']]
-    organization: "req.body.organization",
-    role: "req.body.role",
-    date: "req.body.date",
-    description: "req.body.description"
+    organization: req.body.organization,
+    role: req.body.role,
+    date: req.body.date,
+    description: req.body.description
   }).then(()=>{
     res.sendStatus(200)
   })

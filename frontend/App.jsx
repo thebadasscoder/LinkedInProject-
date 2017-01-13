@@ -7,20 +7,20 @@ import {Provider} from 'react-redux';
 import Store from './store/store'; 
 
 /**** ACTIONS WILL BE IMPORTED HERE ****/
-// import  Actions from './actions/skills-action.js';
 import User_Actions from './actions/User-Actions';
+import Resume_Actions from './actions/resume-actions';
 
 /****ADD YOUR COMPONENTS HERE****/
-import Skills from './components/skills/Skills.jsx';
 import Blog from './components/blog/Blog';
 import NewBlog from './components/blog/NewBlog';
-import Login from './components/login/Login';
-import Register from './components/login/Register';
+import LoginPage from './components/login/LoginPage';
 import DetailBlog from './components/blog/DetailBlog';
-import Profile from './components/home/profile/Profile';
+import Resume from './resumeComponents/resume';
+import Home from './components/home/index';
+
 
 const App = withRouter((props)=>(
-  <div>
+  <div className="mainComponent">
     {/*<Navbar />*/}
     {props.children}
   </div>
@@ -30,17 +30,20 @@ const validate = ()=>{
   Store.dispatch(User_Actions.validate());
 }
 
+// const enterHome = (nextState) =>{
+//   console.log(nextState);
+//   store.dispatch(Resume_Actions.getResumeServer())
+// }
+
 ReactDOM.render(
   <Provider store={Store}>
     <Router history={browserHistory}>
       <Route path="/" component={App} onEnter={validate}>
-        <Route path="/endorsements" component={Skills}/>
+       <IndexRoute component={LoginPage}/>
         <Route path="/blog" component={Blog} />
         <Route path='/newblog' component={NewBlog} />
         <Route path="/blog/:id" component={DetailBlog} />
-        <Route path="/login" component={Login}/>
-        <Route path="/register" component={Register}/>
-        <Route path="/profile" component={Profile} />
+        <Route path="/profile" component={Home} />
       </Route> 
       {/*<Route path="/*" component={NotFound}/>*/}
     </Router>

@@ -1,0 +1,26 @@
+.profileImage {
+	align-self: center;
+	padding-left: 44px;
+    padding-right: 44px;
+    padding-top: 44px;
+    padding-bottom: 44px;
+}
+
+.profileFlex {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	align-content: center;
+}
+
+.showBorder{
+	border: 2px solid blue;
+}
+
+.profilePadded{
+	padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

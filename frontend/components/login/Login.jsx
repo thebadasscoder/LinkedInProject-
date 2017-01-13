@@ -24,26 +24,21 @@ const Login = React.createClass({
 	},
 	render(){
 		return(
-			<div>
-				<form onSubmit={this.submit}>
+			<div className="login loginFlex">
+				<div className="loginImage">
+					<img src="Linkedin.png" />
+				</div>
+				<form onSubmit={this.submit} className="loginPadding">
 					<input type="text" placeholder="username" onChange={this.change.bind(this,"username")} value={this.state.username} /> 
-					<br/>
 					<input type="text" placeholder="password" onChange={this.change.bind(this,"password")} value={this.state.password} />
-					<br/>
 					<input type="submit" value="Login"/>
-					<input type="reset" value="Register" onClick={this.redirect} />
+					{/* no longer needed because these two componenets are on the same page 
+					<input type="reset" value="Register" onClick={this.redirect} />*/}
 				</form>
 			</div>
 		)
 	}
 })
 
-const mapStateToProps = (state, ownprops)=>{
-	return{}
-}
 
-function mapDispatchToProps(dispatch) {
-	return {login: bindActionCreators(user_actions.getUserServer, dispatch)}
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect()(Login);

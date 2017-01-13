@@ -32,12 +32,15 @@ const Register = React.createClass({
 		if(this.state.image){
 			formData.append('image', this.state.image, this.state.image.name);
 		}
-		this.props.register(formData);
+		this.props.register(formData)
+		.then(date=>{
+			this.props.router.push('/blog')
+		})
 	},
 	render(){
 		return(
-			<div>
-				<form onSubmit={this.submit}>
+			<div className="registerFlex" >
+				<form onSubmit={this.submit} className="registerFlex">
 					<input type="text" value={this.state.name} placeholder="Name" onChange={this.change.bind(this,"name")}/>
 					<br/>
 					<input type="text" value={this.state.username} placeholder="username" onChange={this.change.bind(this,"username")}/>
@@ -61,12 +64,13 @@ const Register = React.createClass({
 
 const mapStateToProps = (state, ownprops)=>{
 	return{
-		user: state.user
 	}
 }
 
 function mapDispatchToProps(dispatch) {
-	return {register: bindActionCreators(user_actions.postProfile, dispatch)}
+	return {
+		register: bindActionCreators(user_actions.postProfile, dispatch)
+	}
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Register);

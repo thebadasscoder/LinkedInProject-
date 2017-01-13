@@ -30,7 +30,7 @@ const NewBlog = React.createClass({
 
         })
         .done((data) => {
-        	
+        	this.props.router.push('/blog')
         	console.log('Received the data')
         })
         this.setState({title:'', text: '', author: ''})

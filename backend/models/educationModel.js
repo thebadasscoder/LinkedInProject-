@@ -5,39 +5,41 @@ module.exports = function(sequelize, DataTypes) {
     var Education = sequelize.define("Education", {
         school: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         degree: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
-        date: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
+        // education: {
+        //     type: DataTypes.STRING,
+        //     allowNull: true,
+        // },
         clubs: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         society: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         image: {
             type: DataTypes.STRING,
-            validate:{
-              isUrl: true, 
-            },
-            allowNull: false,
+            // validate:{
+            //   isUrl: true, 
+            // },
+            allowNull: true,
         },
     }, {
         classMethods: {
           associate: function(models) {
         // Using additional options like CASCADE etc for demonstration
         // Can also simply do Task.belongsTo(models.User);
+        Education.belongsTo(models.profile);
         // Education.belongsToMany(models.Song, {through: "SongFeatures"});
         // Education.belongsTo(models.Resume)
-        Education.hasMany(models.Resume,{ foreignKey: 'education_fields'})
+        // Education.hasMany(models.Resume,{ foreignKey: 'education_fields'})
+
         // Resume.hasMany(models.Language,{ foreignKey: 'resume_fields'}),
         // Resume.hasMany(models.Experience,{ foreignKey: 'resume_fields'}),
         // Resume.hasMany(models.Education,{ foreignKey: 'resume_fields'})

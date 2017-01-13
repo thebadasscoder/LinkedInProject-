@@ -1,0 +1,9 @@
+body {
+	background-image: url("../somebackgroundImage.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.mainComponent{
+	background-color: #F5F5F5;
+}

@@ -6,11 +6,11 @@ module.exports = function(sequelize, DataTypes) {
     var Language = sequelize.define("Language", {
         language: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         proficiency: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         
     }, {

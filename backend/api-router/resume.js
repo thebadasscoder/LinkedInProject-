@@ -30,7 +30,7 @@ const getResumeById = (req,res)=>{
 const createResume = (req,res)=>{
   // res.send('post works')
    Resume.create({
-   name: "req.body.name"
+   name: req.body.name,
    
 
   }).then(()=>{

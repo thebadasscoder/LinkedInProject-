@@ -28,13 +28,17 @@ const Login = React.createClass({
 				<div className="loginImage">
 					<img src="Linkedin.png" />
 				</div>
-				<form onSubmit={this.submit} className="loginPadding">
-					<input type="text" placeholder="username" onChange={this.change.bind(this,"username")} value={this.state.username} /> 
-					<input type="text" placeholder="password" onChange={this.change.bind(this,"password")} value={this.state.password} />
-					<input type="submit" value="Login"/>
-					{/* no longer needed because these two componenets are on the same page 
-					<input type="reset" value="Register" onClick={this.redirect} />*/}
-				</form>
+				<div className="loginPadding">
+					<form onSubmit={this.submit}>
+						<input type="text" className=" username form-control" placeholder="Username" onChange={this.change.bind(this,"username")} value={this.state.username} /> 
+						<input type="text" className="password form-control"placeholder="Password" onChange={this.change.bind(this,"password")} value={this.state.password} />
+						<input type="submit" className="btn btn-default" value="Sign in"/>
+						{/* no longer needed because these two componenets are on the same page 
+						<input type="reset" value="Register" onClick={this.redirect} />*/}
+					</form>
+				</div>
+
+
 			</div>
 		)
 	}

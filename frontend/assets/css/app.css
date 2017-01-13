@@ -1,6 +1,9 @@
 body {
-	background-image: url("../somebackgroundImage.jpeg");
-	background-repeat: no-repeat;
+	background-image: url("../network.jpg");
+	background-repeat: no-repeat center center fixed;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
 	background-size: cover;
 }
 

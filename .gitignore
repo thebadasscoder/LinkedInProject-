@@ -5,3 +5,4 @@ frontend/assets/bundle
 npm-debug.log
 *.jpeg
 *.png
+*.mp4

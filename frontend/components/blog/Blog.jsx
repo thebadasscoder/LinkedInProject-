@@ -24,10 +24,11 @@ const Blog = React.createClass({
 	},
 	render: function(){
 		return (
-			<div>
-               <h1> Blog Posts Page</h1>
+			<div className='blog-posts'>
+               <h1> Blog Posts </h1>
+               <div className='blog-list' >
                {this.state.postsList.map(function(val, indx){
-               	return <li key={indx}>
+               	return <li key={indx} className='elements'>
                	       <Link to={'/blog/'+ val.id} > 
                	       id: {val.id}  </Link>
                	       <br/>
@@ -37,6 +38,7 @@ const Blog = React.createClass({
 
                	</li>
                })}
+               </div>
         	</div>
 			)
 	}

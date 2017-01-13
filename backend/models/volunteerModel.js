@@ -11,11 +11,11 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: true,
         },
-        voldate: {
+        date: {
             type: DataTypes.STRING,
             allowNull: true,
         },
-        voldescription: {
+        description: {
             type: DataTypes.TEXT,
             allowNull: true,
         },

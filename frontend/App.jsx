@@ -41,6 +41,7 @@ ReactDOM.render(
       <Route path="/" component={App} onEnter={validate}>
        <IndexRoute component={LoginPage}/>
         <Route path="/blog" component={Blog} />
+        <Route path="/resume" component={Resume} />
         <Route path='/newblog' component={NewBlog} />
         <Route path="/blog/:id" component={DetailBlog} />
         <Route path="/profile" component={Home} />

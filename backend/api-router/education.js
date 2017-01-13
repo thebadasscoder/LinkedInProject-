@@ -37,7 +37,7 @@ const deleteEducation = (req,res)=>{
 }
 
 const getEducation = (req,res)=>{
-  console.log('im in geteducation')
+  console.log('im in geteducation', req.params.id)
   Education.findOne({
     where: {
       profileId: req.params.id

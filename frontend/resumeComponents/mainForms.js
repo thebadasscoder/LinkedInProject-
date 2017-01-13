@@ -1,6 +1,6 @@
 import React from 'react'
 import $ from 'jquery'
-import {addSchool} from './educationActions'
+// import {addSchool} from './educationActions'
 // import store from '../store/store'
 import EducationForm from './educationForm'
 import ExperienceForm from './experienceForm'
@@ -145,23 +145,23 @@ var MainForms = React.createClass({
 
           </div>
 
-          {/*<div>
+         <div>
 
-            <ExperienceForm handleSubmit = {this.handleExpSubmit} handleChange = {this.handleChange} />
+            <ExperienceForm />
             
           </div>
 
            <div>
 
-            <LanguageForm handleSubmit = {this.handleLanSubmit} handleChange = {this.handleChange} />
+            <LanguageForm />
 
           </div>
 
           <div>
 
-            <VolunteerForm handleSubmit = {this.handleVolSubmit} handleChange = {this.handleChange} />
+            <VolunteerForm  />
 
-          </div>*/}
+          </div>
 
         <div style = {{height:100}}>
 

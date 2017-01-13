@@ -12,7 +12,7 @@ import User_Actions from './actions/User-Actions';
 import Resume_Actions from './actions/resume-actions';
 
 /****ADD YOUR COMPONENTS HERE****/
-// import Resume from './resumeComponents/resumeContainer'
+import ResumeDisplay from './components/home/resumeDisplay/EducationDisplay'
 import Skills from './components/skills/Skills.jsx';
 import Blog from './components/blog/Blog';
 import NewBlog from './components/blog/NewBlog';
@@ -48,6 +48,7 @@ ReactDOM.render(
         <IndexRoute component={LoginPage}/>
         <Route path="/endorsements" component={Skills}/>
         <Route path="/resume" component={Resume}/>
+        <Route path="/resumedisplay" component={ResumeDisplay}/>
         <Route path="/blog" component={Blog} />
         <Route path='/newblog' component={NewBlog} />
         <Route path="/blog/:id" component={DetailBlog} />

@@ -17,7 +17,7 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: true,
         },
-        expdescription: {
+        description: {
             type: DataTypes.TEXT,
             allowNull: true,
         },

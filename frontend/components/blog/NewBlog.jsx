@@ -49,7 +49,7 @@ const NewBlog = React.createClass({
 			        Author:<input type='text' className="author" name='t3' 
 			          onChange={this.handleAuthor} value={this.state.author}/> <br/>
 			        {/*Picture:<br/> <input type='file' name='pic' accept='image/*' /> <br/>*/}
-			        <input type='submit'  />
+			        <input type='submit'  className='blog-submit'/>
               </form>
            
 		    </div>

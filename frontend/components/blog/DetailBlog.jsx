@@ -36,7 +36,7 @@ const DetailBlog = React.createClass({
 			            Title: {this.state.iData.title} <br/>
 			            Text: {this.state.iData.text_body} <br/>
 			            Author: {this.state.iData.author} <br/>
-			            <button name='likes' onClick={this.handleClick}>{this.state.counter} </button>
+			            <button name='likes' onClick={this.handleClick} className='blog-counter'> {this.state.counter} </button>
 			       
 			       </div>
 				}        

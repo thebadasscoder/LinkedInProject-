@@ -1,6 +1,19 @@
-.registerFlex{
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center; 
+div.registerFlex{
+display: flex;
+width: 430px;
+padding-top: 400px;
+/*background-size: 80px;*/
+/*position: relative;*/
+margin-top:35px;
+margin-left: 350px;
+background-color: #ecf0f1;
+}
+form.registerFlex{
+margin-top: -350px;
+align-content: flex-start;
+flex-direction: column;
+position: absolute;
+}
+input.joinNow.btn.btn-warning{
+	margin-top: -70px
 }

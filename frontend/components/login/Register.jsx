@@ -41,19 +41,25 @@ const Register = React.createClass({
 		return(
 			<div className="registerFlex" >
 				<form onSubmit={this.submit} className="registerFlex">
-					<input type="text" value={this.state.name} placeholder="Name" onChange={this.change.bind(this,"name")}/>
+				Name:<br/>
+				<input type="text" value={this.state.name} className="name btn btn-default"placeholder="name" onChange={this.change.bind(this,"name")}/>
 					<br/>
-					<input type="text" value={this.state.username} placeholder="username" onChange={this.change.bind(this,"username")}/>
+				Username:<br/>
+					<input type="text" value={this.state.username}  className="user btn btn-default" placeholder="username" onChange={this.change.bind(this,"username")}/>
 					<br/>
-					<input type="password" value={this.state.password} placeholder="password" onChange={this.change.bind(this,"password")}/>
+				Password:<br/>
+					<input type="password" value={this.state.password} className="passwrd btn btn-default" placeholder="password" onChange={this.change.bind(this,"password")}/>
 					<br/>
-					<input type="password" value={this.state.passwordConfermation} placeholder="confirm password" onChange={this.change.bind(this,"passwordConfermation")}/>
+				Confirm password:<br/>
+					<input type="password" value={this.state.passwordConfermation} className="confirmPswrd btn btn-default" placeholder="confirm password" onChange={this.change.bind(this,"passwordConfermation")}/>
 					<br/>
-					<input type="email" value={this.state.email} placeholder="email@something.com" onChange={this.change.bind(this,"email")}/>
+				Email:<br/>
+					<input type="email" value={this.state.email} className="email btn btn-default" placeholder="email address" onChange={this.change.bind(this,"email")}/>
 					<br/>
-					<FormInput name="myImage" accept=".jpg" placeholder="MyProfilePic" onChange={this.change.bind(this, "image")}/>
+				Upload Photo:<br/>
+					<FormInput name="myImage" accept=".jpg" className="uploadphoto btn btn-default" placeholder="upload photo" onChange={this.change.bind(this, "image")}/>
 					<br/>
-					<input type="submit" value="Register"/>
+					<input  className="joinNow btn btn-warning" type="submit" value="Join now"/>
 				</form>
 			</div>
 			)

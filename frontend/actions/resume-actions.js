@@ -7,7 +7,7 @@ const getResume = currentResume => ({
 
 const getResumeServer = (profileID) => dispatch => {
   $.ajax({
-    url: '/api/education/'+profileID,
+    url: '/api/education/'+ profileID,
     type: 'GET',
 
   })

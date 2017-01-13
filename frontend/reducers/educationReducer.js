@@ -1,23 +1,10 @@
-import addSchool from '../resumeComponents/educationActions'
-
-const defaultState = {
-  school:'',
-  degree:'',
-  date:'',
-  clubs:'', 
-  society:'',
-  image:''
-
-}
-
-const educationReducer = (oldstate = defaultState, action) => {
-  switch(action.type){
-
-    case 'addSchool':
-      return Object.assign({}, oldstate, {school:action.data})
+const EDUCATION = (state = false, action) => {
+  switch (action.type) {
+    case "GET_EDUCATION":
+      return action.data
     default:
-      oldstate
+      return state
   }
 }
 
-export default educationReducer
+export default EDUCATION;

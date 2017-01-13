@@ -145,21 +145,21 @@ var MainForms = React.createClass({
 
           </div>
 
-          {/*<div>
+         {/*<div>
 
-            <ExperienceForm handleSubmit = {this.handleExpSubmit} handleChange = {this.handleChange} />
+            <ExperienceForm />
             
           </div>
 
            <div>
 
-            <LanguageForm handleSubmit = {this.handleLanSubmit} handleChange = {this.handleChange} />
+            <LanguageForm />
 
           </div>
 
           <div>
 
-            <VolunteerForm handleSubmit = {this.handleVolSubmit} handleChange = {this.handleChange} />
+            <VolunteerForm  />
 
           </div>*/}
 

@@ -40,6 +40,7 @@ const Register = React.createClass({
 	render(){
 		return(
 			<div className="registerFlex" >
+				<h3 className="title"> Be great at what you do! </h3>
 				<form onSubmit={this.submit} className="registerFlex">
 				Name:<br/>
 				<input type="text" value={this.state.name} className="name btn btn-default"placeholder="name" onChange={this.change.bind(this,"name")}/>
@@ -57,7 +58,7 @@ const Register = React.createClass({
 					<input type="email" value={this.state.email} className="email btn btn-default" placeholder="email address" onChange={this.change.bind(this,"email")}/>
 					<br/>
 				Upload Photo:<br/>
-					<FormInput name="myImage" accept=".jpg" className="uploadphoto btn btn-default" placeholder="upload photo" onChange={this.change.bind(this, "image")}/>
+					<FormInput name="myImage" accept=".jpg" className="uploadphoto btn btn-default" placeholder="upload" onChange={this.change.bind(this, "image")}/>
 					<br/>
 					<input  className="joinNow btn btn-warning" type="submit" value="Join now"/>
 				</form>

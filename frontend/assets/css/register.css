@@ -1,12 +1,15 @@
+body{
+font-family: 'Open Sans Condensed', sans-serif;
+}
+
 div.registerFlex{
 display: flex;
-width: 430px;
-padding-top: 400px;
-/*background-size: 80px;*/
+width: 355px;
+padding-top: 430px;
+background-color: #ecf0f1;
 /*position: relative;*/
 margin-top:35px;
-margin-left: 350px;
-background-color: #ecf0f1;
+margin-left: 460px;
 }
 form.registerFlex{
 margin-top: -350px;
@@ -15,5 +18,39 @@ flex-direction: column;
 position: absolute;
 }
 input.joinNow.btn.btn-warning{
-	margin-top: -70px
+	margin-top: -50px
 }
+
+input.user.btn.btn-default{
+	width: 355px;
+}
+
+input.passwrd.btn.btn-default{
+	width: 355px;
+}
+
+
+input.confirmPswrd.btn.btn-default{
+	width: 355px;
+}
+
+
+input.email.btn.btn-default{
+	width: 355px;
+}
+
+input.name.btn.btn-default{
+	width: 355px;
+}
+
+input.uploadphoto.btn.btn-default{
+	width:350px;
+/*	margin-top:-50px;*/
+}
+
+h3.title{
+ margin-top:-400px;
+ margin-left:80px;
+}
+
+

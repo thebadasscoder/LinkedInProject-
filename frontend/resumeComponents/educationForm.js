@@ -53,7 +53,8 @@ var EducationForm = React.createClass({
     school: '',
     degree: '',
     clubs: '',
-    society: ''
+    society: '',
+    image: ''
   })
 
   })
@@ -67,7 +68,7 @@ var EducationForm = React.createClass({
       <div >
         <div id = "educationFormStyle">
           <div id = 'left'> 
-          education
+          
 
           </div>
             <form id = 'form' onSubmit = {this.handleEduSubmit}>
@@ -76,12 +77,13 @@ var EducationForm = React.createClass({
                 <input value={this.state.degree} onChange = {this.handleChange.bind(this, 'degree')} className = 'educationInputStyle' type ="text" placeholder = 'Degree'/>
                 <input value={this.state.clubs} onChange = {this.handleChange.bind(this, 'clubs')} className = 'educationInputStyle' type ="text" placeholder = 'Clubs'/>
                 <input value={this.state.society} onChange = {this.handleChange.bind(this, 'society')} className = 'educationInputStyle' type ="text" placeholder = 'Society'/>
+
+                <input value={this.state.image} onChange = {this.handleChange.bind(this, 'image')} className = 'educationInputStyle' type ="text" placeholder = 'Image'/>
                
                 <input value = 'Save' className = 'educationInputStyle' type = 'submit'/>
              
             </form>
           <div id = 'right'>
-          education
           </div>
        
         </div>

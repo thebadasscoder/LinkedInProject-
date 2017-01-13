@@ -11,7 +11,31 @@ const EducationDisplay = (props) =>{
   }
   return(
     <div>
-      {props.education.clubs}
+
+
+      <div id = 'schoolDisplay'>
+          <img  style = {{width: 220 ,height: 220, marginLeft: 40}} src = {props.education.image}/>
+        <div id ='schoolDisplayFields'>
+
+          <div>
+            <h3 className ='schoolDisplayFields'>School: {props.education.school }</h3>
+          </div>
+
+          <div>
+            <h3 className ='schoolDisplayFields'> Degree: {props.education.degree }</h3>
+          </div>
+
+          <div>
+            <h3 className ='schoolDisplayFields'> Clubs: {props.education.clubs }</h3>
+          </div>
+
+          <div>
+            <h3 className ='schoolDisplayFields'> Society: {props.education.society }</h3>
+          </div>
+
+        </div>
+      </div>
+
     </div>
   )
 }

@@ -25,6 +25,22 @@ const createExperience = (req,res)=>{
   })
 }
 
+const getExperience = (req,res)=>{
+  console.log('im in exp', req.params.id)
+  Experience.findOne({
+    where: {
+      profileId: req.params.id
+    }
+  })
+  .then((data)=>{
+    res.send(data)
+  })
+  .catch((err)=>{
+    res.send(err)
+  })
+}
+
+
 const deleteExperience = (req,res)=>{
   // res.send('delete works')
   Experience.destroy({
@@ -62,6 +78,7 @@ const updateExperience = (req,res)=>{
 router.route('/')
   .post(createExperience)
 router.route('/:id')
+  .get(getExperience)
   .delete(deleteExperience)
 router.route('/:id')
   .put(updateExperience)

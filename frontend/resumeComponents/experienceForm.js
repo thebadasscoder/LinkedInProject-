@@ -64,12 +64,10 @@ var ExperienceForm = React.createClass({
   render(){
     return(
       <div >
-      <div style = {{height:100}}>
-
-      </div>
+      
         <div id = "educationFormStyle">
           <div id = 'left'> 
-          experience
+          
 
           </div>
             <form id = 'form' onSubmit = {this.handleExpSubmit}>
@@ -83,7 +81,7 @@ var ExperienceForm = React.createClass({
              
             </form>
           <div id = 'right'>
-          experience
+          
           </div>
        
         </div>

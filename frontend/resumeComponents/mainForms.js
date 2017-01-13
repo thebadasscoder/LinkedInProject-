@@ -3,9 +3,9 @@ import $ from 'jquery'
 // import {addSchool} from './educationActions'
 // import store from '../store/store'
 import EducationForm from './educationForm'
-import ExperienceForm from './experienceForm'
-import LanguageForm from './languageForm'
-import VolunteerForm from './volunteerForm'
+// import ExperienceForm from './experienceForm'
+// import LanguageForm from './languageForm'
+// import VolunteerForm from './volunteerForm'
 import {Link} from 'react-router'
 
 
@@ -145,7 +145,7 @@ var MainForms = React.createClass({
 
           </div>
 
-         <div>
+         {/*<div>
 
             <ExperienceForm />
             
@@ -161,7 +161,7 @@ var MainForms = React.createClass({
 
             <VolunteerForm  />
 
-          </div>
+          </div>*/}
 
         <div style = {{height:100}}>
 
